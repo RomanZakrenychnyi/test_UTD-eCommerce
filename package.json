@@ -16,7 +16,8 @@
   "main": "script.js",
   "scripts": {
     "build": "node build.mjs",
-    "dev": "node build.mjs --dev"
+    "dev": "node build.mjs --dev",
+    "sass:watch": "sass --watch scss/style.scss:css/style.css"
   },
   "dependencies": {
     "acorn": "^8.15.0",
@@ -31,6 +32,7 @@
     "param-case": "^3.0.4",
     "pascal-case": "^3.1.2",
     "relateurl": "^0.2.7",
+    "sass": "^1.96.0",
     "source-map": "^0.6.1",
     "source-map-support": "^0.5.21",
     "terser": "^5.44.0",

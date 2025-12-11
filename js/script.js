@@ -1,150 +1,149 @@
-import "./accordion/accordion.js";
-// import "./levels/levels.js";
-// import { detectMenuByViewport } from "./viewportWidth/viewportWidth.js";
-import {defineBehaviorToInstallAppButton, defineLinkForInstallApp} from "./installApp/installApp.js";
-(function () {
-  const DEFAULTS = {
-    lines: 2,
-    minSize: 12,
-    maxSize: 60,
-    lhRatio: 1.2,
-    scale: 1,
-    scaleMob: 1,
-  };
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Дані про продукти для різних колекцій
+    const collectionsData = {
+        'Mantra Rings': {
+            productName: 'Mantra - Ring of Serenity',
+            currentPrice: '₴2,150.00',
+            oldPrice: '₴2,500.00',
+            tags: ['New'],
+            imgSrc: {
+                desktop1x: '/img/product-large-desktop-mantra-1x.webp',
+                desktop2x: '/img/product-large-desktop-mantra-2x.webp',
+                mobile991_1x: '/img/product-large-desktop-mantra-1x.webp',
+                mobile991_2x: '/img/product-large-desktop-mantra-2x.webp',
+                mobile420_1x: '/img/product-small-420w-mantra-1x.webp',
+                mobile420_2x: '/img/product-small-420w-mantra-2x.webp'
+            }
+        },
+        'CharityBands®': {
+            productName: 'Butterfly - Hope And Rebirth', // Активний за замовчуванням
+            currentPrice: '₴1,424.00',
+            oldPrice: '₴1,424.00',
+            tags: ['New', 'Sale'],
+            imgSrc: {
+                desktop1x: '/img/product-large-desktop-1x.webp',
+                desktop2x: '/img/product-large-desktop-2x.webp',
+                mobile991_1x: '/img/product-large-desktop-1x.webp',
+                mobile991_2x: '/img/product-large-desktop-2x.webp',
+                mobile420_1x: '/img/product-small-420w-1x.webp',
+                mobile420_2x: '/img/product-small-420w-2x.webp'
+            }
+        },
+        'Statement Collection': {
+            productName: 'Minimalist Cuff Bracelet',
+            currentPrice: '₴950.00',
+            oldPrice: null, // null, якщо немає старої ціни
+            tags: ['Must Have'],
+            imgSrc: {
+                desktop1x: '/img/product-large-desktop-statement-1x.webp',
+                desktop2x: '/img/product-large-desktop-statement-2x.webp',
+                mobile991_1x: '/img/product-large-desktop-statement-1x.webp',
+                mobile991_2x: '/img/product-large-desktop-statement-2x.webp',
+                mobile420_1x: '/img/product-small-420w-statement-1x.webp',
+                mobile420_2x: '/img/product-small-420w-statement-2x.webp'
+            }
+        }
+    };
 
-  function detectDeviceType() {
-    if (matchMedia("(max-width: 576px)").matches) return "mobile";
-    if (matchMedia("(max-width: 1023px)").matches) return "tablet";
-    return "desktop";
-  }
+    // 2. Об'єкти DOM-елементів, які потрібно оновлювати
+    const collectionLinks = document.querySelectorAll('.collection-list__link');
+    const productNameElement = document.querySelector('.product-card__name');
+    const priceCurrentElement = document.querySelector('.product-card__price-current');
+    const priceOldElement = document.querySelector('.product-card__price-old');
+    const tagsContainer = document.querySelector('.product-card__tags');
+    const pictureElement = document.querySelector('.product-card picture');
 
-  // --- helpers ---
-  function applySize(el, sizePx, lhRatio) {
-    el.style.fontSize = sizePx + "px";
-    el.style.lineHeight = sizePx * lhRatio + "px"; // фіксуємо px — стабільні виміри
-  }
+    // 3. Функція оновлення контенту продукту
+    const updateProductContent = (data) => {
+        // Оновлення імені продукту
+        productNameElement.textContent = data.productName;
 
-  function fitsAt(el, sizePx, lines, lhRatio) {
-    const prevFS = el.style.fontSize;
-    const prevLH = el.style.lineHeight;
+        // Оновлення цін
+        priceCurrentElement.textContent = data.currentPrice;
+        
+        // Відображення старої ціни лише за її наявності
+        priceOldElement.textContent = data.oldPrice ? data.oldPrice : '';
+        priceOldElement.style.display = data.oldPrice ? 'inline' : 'none'; 
 
-    applySize(el, sizePx, lhRatio);
+        // Оновлення тегів
+        tagsContainer.innerHTML = '';
+        data.tags.forEach(tag => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'product-card__tag';
+            // Використовуємо модифікатор BEM для тегу "Sale"
+            if (tag.toLowerCase() === 'sale') {
+                tagSpan.classList.add('product-card__tag--sale');
+            }
+            tagSpan.textContent = tag;
+            tagsContainer.appendChild(tagSpan);
+        });
 
-    const lh = parseFloat(getComputedStyle(el).lineHeight);
-    const maxH =
-      lh * lines +
-      (window.devicePixelRatio ? 1 / window.devicePixelRatio : 0.5);
-    const h = el.getBoundingClientRect().height;
+        // Оновлення <picture> елемента (src/srcset)
+        // Видаляємо всі існуючі <source> елементи для коректного оновлення
+        pictureElement.querySelectorAll('source').forEach(source => source.remove());
+        
+        // Додаємо нові <source> елементи для адаптивності
+        
+        // 1. mobile: max-width: 420px (з 1x, 2x)
+        const source420 = document.createElement('source');
+        source420.media = "(max-width: 420px)";
+        source420.srcset = `${data.imgSrc.mobile420_1x} 1x, ${data.imgSrc.mobile420_2x} 2x`;
+        source420.className = "product-card__source";
+        pictureElement.prepend(source420);
 
-    // відкотити інлайн-стилі
-    el.style.fontSize = prevFS;
-    el.style.lineHeight = prevLH;
+        // 2. tablet/mobile: max-width: 991px (з 1x, 2x)
+        const source991 = document.createElement('source');
+        source991.media = "(max-width: 991px)";
+        source991.srcset = `${data.imgSrc.mobile991_1x} 1x, ${data.imgSrc.mobile991_2x} 2x`;
+        source991.className = "product-card__source";
+        pictureElement.prepend(source991);
+        
+        // 3. Оновлюємо img (основний десктопний/fallback)
+        const imgElement = pictureElement.querySelector('.product-card__image');
+        imgElement.src = data.imgSrc.desktop1x;
+        imgElement.srcset = `${data.imgSrc.desktop2x} 2x`;
+    };
 
-    return h <= maxH;
-  }
+    // Ініціалізація: встановлення контенту активної колекції при завантаженні сторінки
+    // Ми знаємо, що 'CharityBands®' активний за замовчуванням у HTML
+    const initialCollection = document.querySelector('.collection-list__link--active span').textContent.trim();
+    updateProductContent(collectionsData[initialCollection]);
 
-  // парсер числових дата-атрибутів
-  const num = (v, fallback) => {
-    const n = Number(v);
-    return Number.isNaN(n) ? fallback : n;
-  };
+    // 4. Обробник кліків на колекції
+    collectionLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
 
-  // вибір параметрів з урахуванням типу пристрою
-  function pickLines(el, dt) {
-    const mob = num(el.dataset.linesMob, NaN);
-    const desk = num(el.dataset.lines, NaN);
-    if (dt === "mobile" && !Number.isNaN(mob)) return mob;
-    if (!Number.isNaN(desk)) return desk;
-    return DEFAULTS.lines;
-  }
-  function pickMaxFontSize(el, dt) {
-    const mob = num(el.dataset.maxSizeMob, NaN);
-    const desk = num(el.dataset.maxSize, NaN);
-    if (dt === "mobile" && !Number.isNaN(mob)) return mob;
-    if (!Number.isNaN(desk)) return desk;
-    return DEFAULTS.maxSize;
-  }
-  function pickMinFontSize(el, dt) {
-    const mob = num(el.dataset.minSizeMob, NaN);
-    const desk = num(el.dataset.minSize, NaN);
-    if (dt === "mobile" && !Number.isNaN(mob)) return mob;
-    if (!Number.isNaN(desk)) return desk;
-    return DEFAULTS.minSize;
-  }
-  function pickScale(el, dt) {
-    const mob = num(el.dataset.scaleMob, NaN);
-    const desk = num(el.dataset.scale, NaN);
-    if (dt === "mobile" && !Number.isNaN(mob)) return mob;
-    if (!Number.isNaN(desk)) return desk;
-    return dt === "mobile" ? DEFAULTS.scaleMob : DEFAULTS.scale;
-  }
+            // Отримуємо назву колекції з тегу <span> всередині <a>
+            const collectionName = link.querySelector('span').textContent.trim();
+            const productData = collectionsData[collectionName];
+            
+            // Якщо обрана колекція вже активна, нічого не робимо (завжди повинен бути активний один блок)
+            if (link.classList.contains('collection-list__link--active')) {
+                return;
+            }
 
-  function fitTextToLinesMax(el) {
-    const dt = detectDeviceType(); // визначаємо один раз
-    // console.log(dt);
-
-    const lines = pickLines(el, dt);
-    const minSize = pickMinFontSize(el, dt);
-    const maxSize = pickMaxFontSize(el, dt);
-    const lhRatio = num(el.dataset.lhRatio, DEFAULTS.lhRatio);
-    const scale = pickScale(el, dt);
-
-    // 1) якщо навіть мінімум не влазить — застосувати мінімум
-    if (!fitsAt(el, minSize, lines, lhRatio)) {
-      applySize(el, Math.floor(minSize * scale), lhRatio);
-      return;
-    }
-
-    // 2) якщо максимум влазить — застосувати максимум
-    if (fitsAt(el, maxSize, lines, lhRatio)) {
-      applySize(el, Math.floor(maxSize * scale), lhRatio);
-      return;
-    }
-
-    // 3) бінарний пошук у [minSize, maxSize]
-    let lo = minSize;
-    let hi = maxSize;
-    for (let i = 0; i < 18; i++) {
-      const mid = (lo + hi) / 2;
-      if (fitsAt(el, mid, lines, lhRatio)) {
-        lo = mid; // mid влазить — зсуваємо вгору
-      } else {
-        hi = mid; // mid не влазить — зсуваємо вниз
-      }
-    }
-    const best = Math.floor(lo);
-    applySize(el, best * scale, lhRatio);
-  }
-
-  // --- ініціалізація з ResizeObserver ---
-  const nodes = document.querySelectorAll(".banner__title, .banner__subtitle");
-
-  // легке тротлінг-оновлення (один перерахунок у кадр)
-  let raf = 0;
-  const schedule = () => {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      nodes.forEach(fitTextToLinesMax);
+            // Знімаємо клас активності з усіх посилань
+            collectionLinks.forEach(l => l.classList.remove('collection-list__link--active'));
+            
+            // Додаємо клас активності до обраного посилання
+            link.classList.add('collection-list__link--active');
+            
+            // Оновлюємо контент продукту
+            if (productData) {
+                updateProductContent(productData);
+            }
+        });
     });
-  };
 
-  const ro = new ResizeObserver(schedule);
-  nodes.forEach((el) => {
-    fitTextToLinesMax(el);
-    ro.observe(el);
-  });
-
-  window.addEventListener("load", schedule);
-  window.addEventListener("orientationchange", schedule);
-
-const MAIN_SELECTOR = '.mainContainer';
-
-const observer = new MutationObserver(() => detectMenuByViewport(MAIN_SELECTOR));
-observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
-
-// одразу викликати при старті
-detectMenuByViewport(MAIN_SELECTOR);
-window.addEventListener('resize', () => detectMenuByViewport(MAIN_SELECTOR));
-
-})();
+    // 5. Заглушка для кнопки "Quick view"
+    // Кнопка все одно має бути у HTML, але функціонал її не потрібен, тому додамо пустий обробник,
+    // щоб не виникало помилок, якщо вона залишилася у розмітці.
+    const quickViewOpenBtn = document.querySelector('.js-quickview-open');
+    if (quickViewOpenBtn) {
+        quickViewOpenBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log('Quick View clicked - functionality disabled per request.');
+        });
+    }
+});

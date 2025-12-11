@@ -6,1663 +6,210 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Install our app — get 30 Free Spins</title>
+    <title>Best sellers</title>
   </head>
-  <!-- <style>
-    body {
-      display: grid;
-      grid-template-columns: var(--desktop-menu-width) 1fr;
-    }
-    @media (max-width: 1023px) {
-      body {
-        display: initial;
-      }
-    }
-  </style> -->
   <body>
-    <!-- <div class="helpcontainer"></div> -->
     <div class="mainContainer">
-      <section class="banner">
-        <picture>
-          <source
-            srcset="./img/banner_360_1x.webp 1x, ./img/banner_360_2x.webp 2x"
-            type="image/webp"
-            media="(max-width: 576px)"
-          />
-
-          <source
-            srcset="./img/banner_1366_1x.webp 1x, ./img/banner_1366_2x.webp 2x"
-            media="(max-width: 1366px)"
-          />
-
-          <source
-            srcset="./img/banner_1920_1x.webp 1x, ./img/banner_1920_2x.webp 2x"
-            type="image/webp"
-          />
-          <img
-            class="banner__img"
-            src="./img/banner_1920_1x.webp"
-            alt="Vip Bet Banner"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-
-        <div class="banner__content">
-          <div class="banner__items">
-            <!-- <picture>
-              <source
-                srcset="
-                  ./img/gameLogo_576_1x.webp 1x,
-                  ./img/gameLogo_576_1x.webp 2x
-                "
-                type="image/webp"
-                media="(max-width: 576px)"
-              />
-              <source
-                srcset="
-                  ./img/gameLogo_1366_1x.webp 1x,
-                  ./img/gameLogo_1366_2x.webp 2x
-                "
-                media="(max-width: 1366px)"
-              />
-              <source
-                srcset="
-                  ./img/gameLogo_1920_1x.webp 1x,
-                  ./img/gameLogo_1920_2x.webp 2x
-                "
-                type="image/webp"
-              />
-              <img
-                class="banner__customLogo"
-                src="./img/gameLogo_1920_1x.png"
-                alt="Game logo"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture> -->
-            <h2
-              class="banner__title"
-              data-max-size="72"
-              data-min-size="20"
-              data-lines="1"
-              data-max-size-mob="40"
-              data-min-size-mob="20"
-              data-lines-mob="1"
-              data-lh-ratio="1"
-              data-scale="1"
-              data-scale-mob="1"
-            >
-              25 Days. 25 Gifts.
-            </h2>
-            <p
-              class="banner__subtitle"
-              data-max-size="24"
-              data-min-size="12"
-              data-lines="1"
-              data-max-size-mob="20"
-              data-min-size-mob="16"
-              data-lines-mob="2"
-              data-lh-ratio="1"
-              data-scale="1"
-            >
-              Unwrap daily surprises — bonuses, free spins & more!
-            </p>
-          </div>
-          <div class="banner__btnBlock">
-            <a class="banner__btn" href="#">Open Advent Calendar</a>
-            <!-- <div class="banner__btnBlockIcons">
-              <img
-                class="banner__btnIcon"
-                src="./img/android.svg"
-                alt="Android"
-              /><img class="banner__btnIcon" src="./img/iOS.svg" alt="iOS" />
-            </div> -->
-          </div>
-        </div>
-      </section>
-      <section class="promo-vip">
-        <p class="promo-vip__subtitle">
-          <span>Don’t miss</span>
-          <picture>
-            <source
-              srcset="./img/calendar_vip_1x.webp 1x, ./img/calendar_vip_2x.webp 2x"
-              type="image/webp"
-            />
-            <img
-              class="promo-vip__svg promo-vip__svg"
-              src="./img/calendar_vip_1x.png"
-              alt="promo icon"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <span>The Grand Finale</span>
-        </p>
-        <p class="promo-vip__subtitle promo-vip__subtitle--second">
-          <span>on December 25!</span>
-          <picture>
-            <source
-              srcset="./img/gift_1x.webp 1x, ./img/gift_2x.webp 2x"
-              type="image/webp"
-            />
-            <img
-              class="promo-vip__svg promo-vip__svg"
-              src="./img/gift_1x.png"
-              alt="promo icon"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-        </p>
-      </section>
-      <section class="feature-showcase">
-        <h2 class="feature-showcase__title">How It Works</h2>
-        <div class="feature-showcase__content">
-          <div class="step step--first">
-            <div class="step__wrapper">
-              <picture>
-                <source
-                  srcset="./img/notebook_1x.webp 1x, ./img/notebook_2x.webp 2x"
-                  type="image/webp"
-                />
-                <img
-                  class="step__svg"
-                  src="./img/notebook_1x.webp"
-                  alt="notebook"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <div class="step__body">
-                <h3 class="step__title">Visit the calendar every day</h3>
-                <p class="step__description">
-                  Stay in the game — new surprise daily!
-                </p>
-              </div>
-              <p class="step__number step__number--first">01</p>
-            </div>
-          </div>
-
-          <div class="step step--second">
-            <div class="step__wrapper">
-              <picture>
-                <source
-                  srcset="./img/gift_box_1x.webp 1x, ./img/gift_box_2x.webp 2x"
-                  type="image/webp"
-                />
-                <img
-                  class="step__svg"
-                  src="./img/gift_box_1x.webp"
-                  alt="gift box"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <div class="step__body">
-                <h3 class="step__title">Reveal your bonus or Free Spins</h3>
-                <p class="step__description">
-                  Instant fun — no waiting, just rewards!
-                </p>
-              </div>
-              <p class="step__number step__number--second">03</p>
-            </div>
-          </div>
-
-          <div class="step step--third">
-            <div class="step__wrapper">
-              <picture>
-                <source
-                  srcset="./img/calendar_1x.webp 1x, ./img/calendar_2x.webp 2x"
-                  type="image/webp"
-                />
-                <img
-                  class="step__svg"
-                  src="./img/calendar_1x.webp"
-                  alt="calendar"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <div class="step__body">
-                <h3 class="step__title">Tap a date to open your gift</h3>
-                <p class="step__description">
-                  One click and the magic begins.
-                </p>
-              </div>
-              <p class="step__number step__number--third">02</p>
-            </div>
-          </div>
-
-          <div class="step step--forth">
-            <div class="step__wrapper">
-              <picture>
-                <source
-                  srcset="./img/return_1x.webp 1x, ./img/return_2x.webp 2x"
-                  type="image/webp"
-                />
-                <img
-                  class="step__svg"
-                  src="./img/return_1x.webp"
-                  alt="return"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <div class="step__body">
-                <h3 class="step__title">Come back tomorrow!</h3>
-                <p class="step__description">
-                  New fun every day!
-                </p>
-              </div>
-              <p class="step__number step__number--forth">04</p>
-            </div>
-          </div>
-
-          <div class="feature-showcase__center-element">
-            <picture>
-              <source type="image/webp" />
-              <img
-                src="./img/phone_1920_1x.webp"
-                srcset="
-                  ./img/phone_1920_1x.webp 1x,
-                  ./img/phone_1920_2x.webp 2x
-                "
-                alt="Mobile app screenshot"
-                class="mockup__image"
-              />
-            </picture>
-          </div>
-        </div>
-        <p class="feature-showcase__notify-text">
-            👉&nbsp;&nbsp;Missed a day? <span class="feature-showcase__notify-text--accent">Some gifts might melt away — don’t skip!</span>
-          </p>
-      </section>
-      <section class="banner sec-top-spacing">
-        <picture>
-          <source
-            srcset="./img/banner_3_360_1x.webp 1x, ./img/banner_3_360_2x.webp 2x"
-            type="image/webp"
-            media="(max-width: 576px)"
-          />
-          <source
-            srcset="
-              ./img/banner_3_1366_1x.webp 1x,
-              ./img/banner_3_1366_2x.webp 2x
-            "
-            media="(max-width: 1366px)"
-          />
-          <source
-            srcset="
-              ./img/banner_3_1920_1x.webp 1x,
-              ./img/banner_3_1920_2x.webp 2x
-            "
-            type="image/webp"
-          />
-          <img
-            class="banner__img"
-            src="./img/banner_3_1920_1x.webp"
-            alt="Sweet Holiday Chase Ифттук"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-        <div class="banner__content banner__content--third">
-          <div class="banner__items">
-            <h2
-              class="banner__title banner__title--third"
-              data-max-size="40"
-              data-min-size="16"
-              data-lines="2"
-              data-scale="1"
-              data-max-size-mob="32"
-              data-min-size-mob="24"
-              data-lines-mob="2"
-              data-scale-mob="1"
-              data-lh-ratio="1"
-            >
-              What’s Inside the Calendar?
-            </h2>
-            <p
-              class="banner__subtitle banner__subtitle--third"
-              data-max-size="18"
-              data-min-size="10"
-              data-lines="2"
-              data-max-size-mob="16"
-              data-min-size-mob="15"
-              data-lines-mob="2"
-              data-lh-ratio="1"
-              data-scale="1"
-            >
-              From Free Spins and bonus drops to festive missions — unwrap new
-              joy every day.
-            </p>
-            <p
-              class="banner__subtitle banner__subtitle--second"
-              data-max-size="16"
-              data-min-size="16"
-              data-lines="1"
-              data-max-size-mob="16"
-              data-min-size-mob="15"
-              data-lines-mob="2"
-              data-lh-ratio="1"
-              data-scale="1"
-            >
-              <picture>
-                <source
-                  srcset="
-                    ./img/reward_bag_1x.webp 1x,
-                    ./img/reward_bag_2x.webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  class="banner__svg"
-                  src="./img/reward_bag_1x.webp"
-                  alt="champion bag"
-                  loading="lazy"
-                  decoding="async"
-                /> </picture
-              >The more days you open, the bigger the gifts!
-            </p>
-          </div>
-          <a class="banner__btn banner__btn--third" href="#"
-            >Open Advent Calendar</a
-          >
-        </div>
-      </section>
-      <section class="accordion sec-top-spacing">
-        <div class="accordion__background">
-          <h2 class="accordion__title">Terms & Conditions</h2>
-          <div class="accordion__wrapper">
-            <div class="accordion__content">
-              <button class="accordion__btn" onclick="toggleAccordion(this)">
-                <div class="accordion__svg-wrapper">
-                  <img src="./img/finger.webp" alt="finger" />
-                  <p class="accordion__btnText">Open Conditions 🎄</p>
-                </div>
-                <div class="accordion__btnImg">
-                  <img class="accordion__svg" src="./img/plus.svg" alt="plus" />
-                </div>
-              </button>
-              <div class="accordion__panel">
-                <div class="accordion__panelBottom">
-                  <ul class="accordion__list">
-                    <li>
-                      The Advent Calendar runs from
-                      <span class="accordion__list-text--white"
-                        >December 1 to December 25.</span
-                      >
-                    </li>
-                    <li>
-                      Enjoy
-                      <span class="accordion__list-text--white"
-                        >25 days of surprises</span
-                      >
-                      — each day brings a new bonus!
-                    </li>
-                    <li>
-                      Bonuses may include
-                      <span class="accordion__list-text--white"
-                        >cash rewards, free spins, or no-deposit gifts.</span
-                      >
-                    </li>
-                    <li>
-                      Each daily bonus is available for
-                      <span class="accordion__list-text--white"
-                        >one day only</span
-                      >
-                      — from
-                      <span class="accordion__list-text--white"
-                        >00:00 to 23:59 UTC.</span
-                      >
-                    </li>
-                    <li>
-                      Once the day ends, the bonus expires and a
-                      <span class="accordion__list-text--white"
-                        >new surprise</span
-                      >
-                      appears the next day.
-                    </li>
-                    <li>
-                      To claim your daily gift, simply
-                      <span class="accordion__list-text--white"
-                        >follow the link, activate the bonus,</span
-                      >
-                      and
-                      <span class="accordion__list-text--white"
-                        >enjoy your reward!</span
-                      >
-                    </li>
-                    <li>
-                      And don’t forget — the
-                      <span class="accordion__list-text--white"
-                        >Day 25 bonus</span
-                      >
-                      is the
-                      <span class="accordion__list-text--white"
-                        >grand finale:</span
-                      >
-                      the most exciting and valuable gift of the season! 🎅
-                    </li>
-                    <li>
-                      Don’t miss a day — open your gift, spin, and celebrate the
-                      magic of Christmas with CLAPS! 🎄✨
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="banner sec-top-spacing">
-        <picture>
-          <source
-            srcset="./img/banner_2_360_1x.webp 1x, ./img/banner_2_360_2x.webp 2x"
-            type="image/webp"
-            media="(max-width: 576px)"
-          />
-          <source
-            srcset="
-              ./img/banner_2_1366_1x.webp 1x,
-              ./img/banner_2_1366_2x.webp 2x
-            "
-            media="(max-width: 1366px)"
-          />
-          <source
-            srcset="
-              ./img/banner_2_1920_1x.webp 1x,
-              ./img/banner_2_1920_2x.webp 2x
-            "
-            type="image/webp"
-          />
-          <img
-            class="banner__img"
-            src="./img/banner_2_1920_1x.webp"
-            alt="Sweet Holiday Chase Ифттук"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-        <div class="banner__content banner__content--second">
-          <div class="banner__items">
-            <h2
-              class="banner__title banner__title--second"
-              data-max-size="40"
-              data-min-size="16"
-              data-lines="2"
-              data-scale="1"
-              data-max-size-mob="32"
-              data-min-size-mob="24"
-              data-lines-mob="3"
-              data-scale-mob="1"
-              data-lh-ratio="1"
-            >
-              Christmas Countdown Has Started!
-            </h2>
-            <p
-              class="banner__subtitle banner__subtitle--third"
-              data-max-size="18"
-              data-min-size="10"
-              data-lines="2"
-              data-max-size-mob="16"
-              data-min-size-mob="15"
-              data-lines-mob="2"
-              data-lh-ratio="1"
-              data-scale="1"
-            >
-              25 days.<span class="banner__subtitle--third-accent"
-                >25 surprises.</span
-              >
-            </p>
-          </div>
-          <!-- <ul class="banner__list">
-              <li>
-                VIP Bet is available for Single, Express, and System types
-              </li>
-              <li>
-                Applies to Pre-Match events
-              </li>
-              <li>
-                The organizer solely determines which events qualify for VIP bets
-              </li>
-              <li>
-                Bet results are settled according to the site’s general rules
-              </li>
-              <li>
-                The preferred amount must be 10% higher than the max amount.
-              </li>
-              <li>
-                A VIP bet cannot be changed or canceled after confirmation
-              </li>
-            </ul> -->
-          <a class="banner__btn banner__btn--second" href="#"
-            >Open Advent Calendar</a
-          >
-        </div>
-      </section>
-      <!-- <section class="rewards">
-        <div class="rewards__flex">
-          <div class="rewards__contaire">
-            <h2 class="rewards__title">Holiday Rewards Await!</h2>
-            <p class="rewards__text">
-              From
-              <span class="rewards__text--accent"
-                >19 November 2025 at 19:01 CET to 14 January 2026 at 18:59
-                CET,</span
-              >
-              you can enjoy a total of 1,000,000 instant prizes dropping at
-              random – from bet multipliers to free spins, all
-              <span class="rewards__text--accent"
-                >without wagering requirements</span
-              >
-            </p>
-          </div>
-          <div class="rewards__cards">
-            <div class="rewards__card">
-              <picture>
-                <source
-                  srcset="
-                    ./img/reward_card_1_360_1x.webp 1x,
-                    ./img/reward_card_1_360_2x.webp 2x
-                  "
-                  type="image/webp"
-                  media="(max-width: 576px)"
-                />
-
-                <source
-                  srcset="
-                    ./img/reward_card_1_1366_1x.webp 1x,
-                    ./img/reward_card_1_1366_2x.webp 2x
-                  "
-                  media="(max-width: 1366px)"
-                />
-
-                <source
-                  srcset="
-                    ./img/reward_card_1_1920_1x.webp 1x,
-                    ./img/reward_card_1_1920_2x.webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  class="rewards__img"
-                  src="./img/reward_card_1_1920_1x.webp"
-                  alt="snow"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <p class="rewards__card-number">01</p>
-              <div class="rewards__card-wrapper">
-                <picture>
-                  <source
-                    srcset="
-                      ./img/reward_goblet_1x.webp 1x,
-                      ./img/reward_goblet_2x.webp 2x
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    class="rewards__svg"
-                    src="./img/reward_goblet_1x.webp"
-                    alt="champion goblet"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-                <span class="rewards__card-text"
-                  >Win up to
-                  <span class="rewards__card-text--accent">500x</span> your
-                  bet!</span
-                >
-              </div>
-            </div>
-            <div class="rewards__card rewards__card--seccond">
-              <picture>
-                <source
-                  srcset="
-                    ./img/reward_card_1_360_1x.webp 1x,
-                    ./img/reward_card_1_360_2x.webp 2x
-                  "
-                  type="image/webp"
-                  media="(max-width: 576px)"
-                />
-
-                <source
-                  srcset="
-                    ./img/reward_card_1_1366_1x.webp 1x,
-                    ./img/reward_card_1_1366_2x.webp 2x
-                  "
-                  media="(max-width: 1366px)"
-                />
-
-                <source
-                  srcset="
-                    ./img/reward_card_1_1920_1x.webp 1x,
-                    ./img/reward_card_1_1920_2x.webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  class="rewards__img"
-                  src="./img/reward_card_1_1920_1x.webp"
-                  alt="snow"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <p class="rewards__card-number">02</p>
-              <div class="rewards__card-wrapper">
-                <picture>
-                  <source
-                    srcset="
-                      ./img/reward_bag_1x.webp 1x,
-                      ./img/reward_bag_2x.webp 2x
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    class="rewards__svg"
-                    src="./img/reward_bag_1x.webp"
-                    alt="champion bag"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-                <span class="rewards__card-text"
-                  ><span class="rewards__card-text--accent">125,000 prizes</span> up for grabs every week</span
-                >
-              </div>
-            </div>
-            <div class="rewards__card rewards__card--third">
-              <picture>
-                <source
-                  srcset="
-                    ./img/reward_card_1_360_1x.webp 1x,
-                    ./img/reward_card_1_360_2x.webp 2x
-                  "
-                  type="image/webp"
-                  media="(max-width: 576px)"
-                />
-
-                <source
-                  srcset="
-                    ./img/reward_card_1_1366_1x.webp 1x,
-                    ./img/reward_card_1_1366_2x.webp 2x
-                  "
-                  media="(max-width: 1366px)"
-                />
-
-                <source
-                  srcset="
-                    ./img/reward_card_1_1920_1x.webp 1x,
-                    ./img/reward_card_1_1920_2x.webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  class="rewards__img"
-                  src="./img/reward_card_1_1920_1x.webp"
-                  alt="snow"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <p class="rewards__card-number">03</p>
-              <div class="rewards__card-wrapper">
-                <picture>
-                  <source
-                    srcset="
-                      ./img/reward_fingers_1x.webp 1x,
-                      ./img/reward_fingers_2x.webp 2x
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    class="rewards__svg"
-                    src="./img/reward_fingers_1x.webp"
-                    alt="champion fingers"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-                <span class="rewards__card-text"
-                  ><span class="rewards__card-text--accent">Any bet</span> stake qualifies</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- <section class="how sec-top-spacing">
-        <div class="how__title">HOW TO PLAY</div>
-        <div class="how__content">
-          <div class="howCard">
-            <div class="howCard__pic">
-              <picture
-                ><source
-                  srcset="./img/how_1_576_1x.webp, ./img/how_1_576_2x.webp 2x"
-                  type="image/webp"
-                  media="(max-width: 576px)" />
-                <source
-                  srcset="./img/how_1_1366_1x.webp, ./img/how_1_1366_2x.webp 2x"
-                  media="(max-width: 1366px)" />
-                <source
-                  srcset="./img/how_1_1920_1x.webp, ./img/how_1_1920_2x.webp 2x"
-                  type="image/webp" />
-                <img
-                  class="howCard__img"
-                  src="./img/how_1_1920_1x.webp"
-                  alt="Sweet Holiday Chase Ифттук"
-                  loading="lazy"
-                  decoding="async"
-              /></picture>
-            </div>
-            <div class="howCard__content">
-              <div class="howCard__title">Place your bet</div>
-              <p class="howCard__info">
-                Play at least one real money spin of any bet stake on any
-                participating game
-              </p>
-              <div class="howCard__number">01</div>
-            </div>
-          </div>
-          <div class="howCard">
-            <div class="howCard__pic">
-              <picture
-                ><source
-                  srcset="./img/how_2_576_1x.webp, ./img/how_2_576_2x.webp 2x"
-                  type="image/webp"
-                  media="(max-width: 576px)" />
-                <source
-                  srcset="./img/how_2_1366_1x.webp, ./img/how_2_1366_2x.webp 2x"
-                  media="(max-width: 1366px)" />
-                <source
-                  srcset="./img/how_2_1920_1x.webp, ./img/how_2_1920_2x.webp 2x"
-                  type="image/webp" />
-                <img
-                  class="howCard__img"
-                  src="./img/how_2_1920_1x.webp"
-                  alt="Sweet Holiday Chase Ифттук"
-                  loading="lazy"
-                  decoding="async"
-              /></picture>
-            </div>
-            <div class="howCard__content">
-              <div class="howCard__title">How to win</div>
-              <p class="howCard__info">
-                Prizes are awarded randomly on any spin played with a Qualifying
-                Bet
-              </p>
-              <div class="howCard__number">02</div>
-            </div>
-          </div>
-          <div class="howCard">
-            <div class="howCard__pic">
-              <picture
-                ><source
-                  srcset="./img/how_3_576_1x.webp, ./img/how_3_576_2x.webp 2x"
-                  type="image/webp"
-                  media="(max-width: 576px)" />
-                <source
-                  srcset="./img/how_3_1366_1x.webp, ./img/how_3_1366_2x.webp 2x"
-                  media="(max-width: 1366px)" />
-                <source
-                  srcset="./img/how_3_1920_1x.webp, ./img/how_3_1920_2x.webp 2x"
-                  type="image/webp" />
-                <img
-                  class="howCard__img"
-                  src="./img/how_3_1920_1x.webp"
-                  alt="Sweet Holiday Chase Ифттук"
-                  loading="lazy"
-                  decoding="async"
-              /></picture>
-            </div>
-            <div class="howCard__content">
-              <div class="howCard__title">What to win</div>
-              <p class="howCard__info">
-                You can win up to 500X of your bet, or free spins as prizes
-              </p>
-              <div class="howCard__number">03</div>
-            </div>
-          </div>
-        </div>
-        <div class="how__notify">
-          <p class="how__notify-text">
-            💡&nbsp;&nbsp;Each Qualifying Bet can trigger only one random prize
-            at a time
-          </p>
-        </div>
-        <a
-          href="/casino/show-game/pragmatic-play/sweet-rush-bonanza/"
-          class="banner__btn how__btn"
-          >play now</a
-        >
-      </section> -->
-      <!-- <section class="trick sec-top-spacing">
-        <h3 class="trick__title">How to Participate</h3>
-        <div class="trick__content">
-          <div class="trickCard">
-            <div class="trickCard__content">
-              <div class="trickCard__pic">
-                <img
-                  class="trickCard__img"
-                  src="./img/trickImg_3.webp"
-                  alt="Prize fund"
-                />
-              </div>
-              <div class="trickCard__title">Prize fund</div>
-              <div class="trickCard__info">€500,000</div>
-            </div>
-          </div>
-          <div class="trickCard">
-            <div class="trickCard__content">
-              <div class="trickCard__pic">
-                <img
-                  class="trickCard__img"
-                  src="./img/trickImg_6.webp"
-                  alt="Qualification"
-                />
-              </div>
-              <div class="trickCard__title">Qualification</div>
-              <div class="trickCard__info">No</div>
-            </div>
-          </div>
-          <div class="trickCard">
-            <div class="trickCard__content">
-              <div class="trickCard__pic">
-                <img
-                  class="trickCard__img"
-                  src="./img/trickImg_9.webp"
-                  alt="Min bet"
-                />
-              </div>
-              <div class="trickCard__title">Min bet</div>
-              <div class="trickCard__info">No</div>
-            </div>
-          </div>
-          <div class="trickCard">
-            <div class="trickCard__content">
-              <div class="trickCard__pic">
-                <img
-                  class="trickCard__img"
-                  src="./img/trickImg_8.webp"
-                  alt="Mechanic"
-                />
-              </div>
-              <div class="trickCard__title">Mechanic</div>
-              <div class="trickCard__info">Weekly Prize Drops</div>
-            </div>
-          </div>
-          <div class="trickCard">
-            <div class="trickCard__content trickCard__content-last">
-              <div class="trickCard__pic">
-                <img
-                  class="trickCard__img"
-                  src="./img/trickImg_5.webp"
-                  alt="Mechanic"
-                />
-              </div>
-              <div class="trickCard__title">Period</div>
-              <div class="trickCard__info">19.11.25- 14.01.26</div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- <section class="table sec-top-spacing">
-        <div class="table__wrapper">
-          <h2 class="table__title">Prize table</h2>
-          <div class="table__container">
-            <table class="prize-table">
-              <thead class="prize-table__head">
-                <tr>
-                  <th class="place-column">From place</th>
-                  <th class="prize-column">Prize, EUR</th>
-                  <th class="prize-column">Free Spins</th>
-                </tr>
-              </thead>
-              <tbody class="prize-table__body">
-                <tr style="height: 1px"></tr>
-                <tr>
-                  <td data-label="From place" class="medal-cell">
-                    <picture class="medal-picture">
-                      <source
-                        srcset="./img/gold@1x.webp 1x, ./img/gold@2x.webp 2x"
-                        type="image/webp"
-                      />
-                      <img
-                        src="./img/gold@1x.webp"
-                        alt="Gold medal"
-                        class="medal-img"
-                      />
-                    </picture>
-                  </td>
-                  <td data-label="Prize, EUR" class="prize-table__body--accent">
-                    € 600
-                  </td>
-                  <td data-label="Free Spins" class="prize-table__body--accent">
-                    300 FS
-                  </td>
-                </tr>
-
-                <tr>
-                  <td data-label="From place" class="medal-cell">
-                    <picture class="medal-picture">
-                      <source
-                        srcset="./img/silver@1x.webp 1x, ./img/silver@2x.webp 2x"
-                        type="image/webp"
-                      />
-                      <img
-                        src="./img/silver@1x.webp"
-                        alt="Silver medal"
-                        class="medal-img"
-                      />
-                    </picture>
-                  </td>
-                  <td data-label="Prize, EUR">€ 400</td>
-                  <td data-label="Free Spins">200 FS</td>
-                </tr>
-
-                <tr>
-                  <td data-label="From place" class="medal-cell">
-                    <picture class="medal-picture">
-                      <source
-                        srcset="./img/bronze@1x.webp 1x, ./img/bronze@2x.webp 2x"
-                        type="image/webp"
-                      />
-                      <img
-                        src="./img/bronze@1x.webp"
-                        alt="Bronze medal"
-                        class="medal-img"
-                      />
-                    </picture>
-                  </td>
-                  <td data-label="Prize, EUR">€ 300</td>
-                  <td data-label="Prize, EUR">200 FS</td>
-                </tr>
-
-                <tr>
-                  <td data-label="From place">4</td>
-                  <td data-label="Free Spins" class="prize-table__body--accent">
-                    € 300
-                  </td>
-                  <td data-label="Free Spins" class="prize-table__body--accent">
-                    100 FS
-                  </td>
-                </tr>
-
-                <tr>
-                  <td data-label="From place">5</td>
-                  <td data-label="Prize, EUR" class="prize-table__body--accent">
-                    € 200
-                  </td>
-                  <td data-label="Prize, EUR" class="prize-table__body--accent">
-                    100 FS
-                  </td>
-                </tr>
-
-                <tr>
-                  <td data-label="From place">6</td>
-                  <td data-label="Prize, EUR" class="prize-table__body--accent">
-                    € 200
-                  </td>
-                  <td data-label="Prize, EUR" class="prize-table__body--accent">
-                    100 FS
-                  </td>
-                </tr>
-              </tbody>
-              <picture class="table__decorImg table__decorImg--1">
-                <source
-                  srcset="
-                    ./img/mine_1x.webp 1x,
-                    ./img/mine_2x.webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  class="table__mine"
-                  src="./img/mine_1x.png"
-                  alt="mine"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-              <picture class="table__decorImg table__decorImg--2">
-                <source
-                  srcset="
-                    ./img/table_dice_1x.webp 1x,
-                    ./img/table_dice_2x.webp 2x
-                  "
-                  type="image/webp"
-                />
-                <img
-                  class="table__dice"
-                  src="./img/table_dice_1x.webp"
-                  alt="dice"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </table>
-          </div>
-        </div>
-      </section> -->
-      <!-- <section class="request">
-        <h2 class="request__title">How to request<br class="br_mobile"> a VIP Bet?</h2>
-        <div class="request__cards">
-          <div class="request__card request__card--first">
-            <div class="request__text-wrapper">
-              <p class="request__text-upper">Select</p>
-              <p class="request__text-lower">Add event to the betslip and check the MAX limit for this bet</p>
-            </div>
-            <p class="request__card-number">01</p>
-            <picture>
-              <source
-                srcset="./img/card_volleyball_1x.webp 1x, ./img/card_volleyball_2x.webp 2x"
-                type="image/webp"
-              />
-              <img
-                class="request__card-volleyball"
-                src="./img/card_volleyball_1x.webp"
-                alt="volleyball"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </div>
-          <div class="request__card request__card--second">
-            <div class="request__text-wrapper">
-              <p class="request__text-upper">Request</p>
-              <p class="request__text-lower">If you want to bet more — enter the preferred amount and press <span class="request__text-lower--accent">“Place Bet”</span></p>
-            </div>
-            <p class="request__card-number">02</p>
-            <picture>
-              <source
-                srcset="./img/card_tennis_1x.webp 1x, ./img/card_tennis_2x.webp 2x"
-                type="image/webp"
-              />
-              <img
-                class="request__card-tennis"
-                src="./img/card_tennis_1x.webp"
-                alt="tennis"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </div>
-          <div class="request__card request__card--third">
-            <div class="request__text-wrapper">
-              <p class="request__text-upper">Confirm</p>
-              <p class="request__text-lower">Our team will review your request and confirm within 3 minutes</p>
-            </div>
-            <p class="request__card-number">03</p>
-            <picture>
-              <source
-                srcset="./img/card_basketball_1x.webp 1x, ./img/card_basketball_2x.webp 2x"
-                type="image/webp"
-              />
-              <img
-                class="request__card-basketball"
-                src="./img/card_basketball_1x.webp"
-                alt="basketball"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </div>
-        </div>
-        <div class="request__note">
-          <span class="request__note-text">💡&nbsp;&nbsp;<span class="request__note-text--accent">Note:</span> During review, other bets will be temporarily paused</span>
-        </div>
-        <div class="request__btnBlock">
-          <a class="request__btn" href=#>place VIP Bet</a>
-        </div>
-      </section> -->
-      <!-- <section class="cashback-levels">
-        <h2 class="cashback-levels__title">Rakeback Levels</h2>
-        <p class="cashback-levels__subtitle">The more you play — the higher your VIP tier, the bigger your rakeback</p>
-        <div class="cashback-levels__content-wrap">
-          <div class="cashback-levels__top-row">
-            <div class="cashback-levels__item-top cashback-levels__item-top--first" data-level="5">
-              <div class="cashback-levels__percent-wrapper">
-                <span class="cashback-levels__percent cashback-levels__percent--first">0.5%</span>
-              </div>
-              <div class="cashback-levels__svg-trigger" data-level="5">
-                <span class="cashback-levels__marker-icon"
-                  ><svg
+      <div class="container">
+        <div class="best-sellers">
+          <p class="best-sellers__subtitle">Best sellers</p>
+          <h2 class="best-sellers__title">Trending Products</h2>
+          <div class="best-sellers__collections">
+            <ul class="collection-list">
+              <li class="collection-list__item">
+                <a href="#" class="collection-list__link">
+                  <span>Mantra Rings</span>
+                  <svg
+                    class="collection-list__arrow-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 18 18"
-                    fill="none"
                   >
                     <path
-                      d="M7.83301 10.1654H0.833008V7.83203H7.83301V0.832031H10.1663V7.83203H17.1663V10.1654H10.1663V17.1654H7.83301V10.1654Z"
-                      fill="#14141A"/></svg></span>
-              </div>
-            </div>
-
-            <div class="cashback-levels__item-top cashback-levels__item-top--second" data-level="6">
-              <div class="cashback-levels__percent-wrapper">
-                <span class="cashback-levels__percent cashback-levels__percent--second">0.7%</span>
-              </div>
-              <div class="cashback-levels__svg-trigger" data-level="6">
-                <span class="cashback-levels__marker-icon"
-                  ><svg
+                      d="M14.4297 5.93005L20.4997 12.0001L14.4297 18.0701"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M3.5 12H20.33"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="collection-list__item">
+                <a
+                  href="#"
+                  class="collection-list__link collection-list__link--active"
+                >
+                  <span>CharityBands®</span>
+                  <svg
+                    class="collection-list__arrow-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 18 18"
-                    fill="none"
                   >
                     <path
-                      d="M7.83301 10.1654H0.833008V7.83203H7.83301V0.832031H10.1663V7.83203H17.1663V10.1654H10.1663V17.1654H7.83301V10.1654Z"
-                      fill="#14141A"
-                    /></svg></span>
-              </div>
-            </div>
-
-            <div class="cashback-levels__item-top cashback-levels__item-top--third" data-level="7">
-              <div class="cashback-levels__percent-wrapper">
-                <span class="cashback-levels__percent cashback-levels__percent--third">1%</span>
-              </div>
-              <div class="cashback-levels__svg-trigger" data-level="7">
-                <span class="cashback-levels__marker-icon"
-                  ><svg
+                      d="M14.4297 5.93005L20.4997 12.0001L14.4297 18.0701"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M3.5 12H20.33"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="collection-list__item">
+                <a href="#" class="collection-list__link">
+                  <span>Statement Collection</span>
+                  <svg
+                    class="collection-list__arrow-icon"
+                    aria-hidden="true"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 18 18"
-                    fill="none"
                   >
                     <path
-                      d="M7.83301 10.1654H0.833008V7.83203H7.83301V0.832031H10.1663V7.83203H17.1663V10.1654H10.1663V17.1654H7.83301V10.1654Z"
-                      fill="#14141A"
-                    /></svg></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="cashback-levels__track-wrapper">
-            <ul class="cashback-levels__track">
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
-              </li>
-              <li class="cashback-levels__segment">
-                <div class="cashback-levels__bar is-active"></div>
+                      d="M14.4297 5.93005L20.4997 12.0001L14.4297 18.0701"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M3.5 12H20.33"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
               </li>
             </ul>
           </div>
+        </div>
 
-          <div class="cashback-levels__bottom-row">
-            <div class="cashback-levels__item-bottom cashback-levels__item-bottom--first" data-level="5">
-              <div class="cashback-levels__details-content">
-                <p class="cashback-levels__percent cashback-levels__percent--first">0.5%</p>
-                <p class="cashback-levels__amount cashback-levels__amount--first">15 000 EUR+</p>
-                <p class="cashback-levels__cashback">0.5% Rakeback</p>
-                <p class="cashback-levels__condition">
-                  Is credited if the player's total sum of casino bets during last 7 days is more than 15 000 EUR or equivalent
-                </p>
+        <div class="product-card">
+          <picture>
+            <source
+              media="(max-width: 420px)"
+              srcset="
+                /img/product-small-420w-1x.webp 1x,
+                /img/product-small-420w-2x.webp 2x
+              "
+              class="product-card__source"
+            />
+            <source
+              media="(max-width: 991px)"
+              srcset="
+                /img/product-large-desktop-1x.webp 1x,
+                /img/product-large-desktop-2x.webp 2x
+              "
+              class="product-card__source"
+            />
+            <img
+              src="/img/product-large-desktop-1x.webp"
+              srcset="/img/product-large-desktop-2x.webp 2x"
+              alt="jewelry"
+              class="product-card__image"
+              loading="lazy"
+            />
+          </picture>
+
+          <div class="product-card__wrapper">
+            <div class="product-card__top-elements">
+              <div class="product-card__tags">
+                <span class="product-card__tag">New</span>
+                <span class="product-card__tag product-card__tag--sale"
+                  >Sale</span
+                >
+              </div>
+
+              <div class="product-card__actions">
+                <button
+                  class="product-card__action-btn product-card__action-btn--wishlist"
+                  aria-label="Add to wishlist"
+                >
+                  <!-- <svg class="product-card__action-icon">
+                    <use href="./img/heart.svg"></use>
+                  </svg> -->
+                  <picture>
+                    <source media="(max-width: 991px)" srcset="/img/flag.svg" />
+                    <img
+                      src="./img/heart.svg"
+                      alt="Іконка дії"
+                      class="product-card__action-icon"
+                    />
+                  </picture>
+                </button>
+
+                <button
+                  class="product-card__action-btn product-card__action-btn--quickview js-quickview-open"
+                  aria-label="Quick view"
+                >
+                  <picture>
+                    <source
+                      media="(max-width: 991px)"
+                      srcset="/img/eye_mob.svg"
+                    />
+                    <img
+                      src="./img/eye.svg"
+                      alt="Іконка дії"
+                      class="product-card__action-icon"
+                    />
+                  </picture>
+                </button>
               </div>
             </div>
 
-            <div class="cashback-levels__item-bottom cashback-levels__item-bottom--second" data-level="6">
-              <div class="cashback-levels__details-content">
-                <p class="cashback-levels__percent cashback-levels__percent--second">0.7%</p>
-                <p class="cashback-levels__amount cashback-levels__amount--second">30 000 EUR+</p>
-                <p class="cashback-levels__cashback">0.7% Rakeback</p>
-                <p class="cashback-levels__condition">
-                  Is credited if the player's total sum of casino bets during last 7 days is more than 30 000 EUR or equivalent
-                </p>
-              </div>
-            </div>
-
-            <div class="cashback-levels__item-bottom cashback-levels__item-bottom--third" data-level="7">
-              <div class="cashback-levels__details-content">
-                <p class="cashback-levels__percent cashback-levels__percent--third">1%</p>
-                <p class="cashback-levels__amount cashback-levels__amount--third">50 000 EUR+</p>
-                <p class="cashback-levels__cashback">1% Rakeback</p>
-                <p class="cashback-levels__condition">
-                  Is credited if the player's total sum of casino bets during last 7 days is more than 50 000 EUR or equivalent
-                </p>
+            <div class="product-card__info product-card__info--overlay">
+              <span class="product-card__name"
+                >Butterfly - Hope And Rebirth</span
+              >
+              <div class="product-card__price">
+                <span class="product-card__price-current">₴1,424.00</span>
+                <span class="product-card__price-old">₴1,424.00</span>
               </div>
             </div>
           </div>
         </div>
-        <a class="btn cashback-levels__btn" href="/casino/topslots/">Go play</a>
-      </section> -->
-      <!-- <section class="tournament sec-top-padding-spacing sec-bottom-padding-spacing">
-          <div class="tournament__wrapper">
-            <h2 class="tournament__title">
-              Join the tournament and explore our latest slot releases
-            </h2>
-            <p class="tournament__subtitle">
-              Play for your chance to win a share of
-              <span class="tournament__subtitle--accent"
-                >1,000 Free Spins!</span
-              >
-            </p>
-          </div>
-          <div class="slots">
-            <div class="slots__event">
-              <div
-                class="slots__icon"
-                style="--slots-icon: #ae6bb5; width: 32px; height: 32px"
-              >
-                <img src="./img/clock.svg" alt="" width="32" height="32" />
-              </div>
-              <p class="slots__event-text">Limited-Time Event</p>
-            </div>
-            <div class="slots__event">
-              <div
-                class="slots__icon"
-                style="--slots-icon: #a9a71e; width: 32px; height: 32px"
-              >
-                <img src="./img/gamepad.svg" alt="" width="32" height="32" />
-              </div>
-              <p class="slots__event-text">New Games Only</p>
-            </div>
-            <div class="slots__event">
-              <div
-                class="slots__icon"
-                style="--slots-icon: #ec6b55; width: 32px; height: 32px"
-              >
-                <img src="./img/gift.svg" alt="" width="32" height="32" />
-              </div>
-              <p class="slots__event-text">No Wagering on Prizes</p>
-            </div>
-          </div>
-      </section> -->
-      <!-- <section>
-        <p class="custom-p">
-          👆 <strong class="accent-w">Available once per account.</strong> Free
-          Spin promocode will be sent to your email, just enter it on the
-          “Bonuses” page and deposit
-        </p>
-        <a class="btn btn--onlyMobile installAppBtn" href="#">Install App</a>
-      </section> -->
-      <!-- <section class="howWorks sec-top-spacing">
-        <h2 id="videoGuide" class="howWorks__title">How it works</h2>
-        <div class="howWorks__content">
-          <div class="howWorks__videoWrapper">
-            <div class="howWorks__videoContent">
-              <video
-                class="howWorks__video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                src="/video/howToInstall.mp4"
-              ></video>
-              <video
-                class="howWorks__video"
-                autoplay="autoplay"
-                muted="muted"
-                loop="loop"
-                playsinline="playsinline"
-                preload="auto"
-              >
-                <source src="/video/howToInstall.webm" type="video/webm" />
-                <source src="/video/howToInstall.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-          <div class="howWorks__cards">
-            <div class="appHowWorksCard">
-              <div class="appHowWorksCard__tip">01 Step</div>
-              <div class="appHowWorksCard__descr">
-                <h5 class="appHowWorksCard__title">Open website in browser</h5>
-                <div class="appHowWorksCard__text">
-                  Open the <strong>browser</strong> app on your phone
-                </div>
-              </div>
-            </div>
-            <div class="appHowWorksCard">
-              <div class="appHowWorksCard__tip">02 Step</div>
-              <div class="appHowWorksCard__descr">
-                <h5 class="appHowWorksCard__title">Tap the Sharing button</h5>
-                <div class="appHowWorksCard__text">
-                  Use browser to go to CLAPS, then tap the
-                  <strong class="accent-w">Sharing</strong> button
-                </div>
-              </div>
-            </div>
-            <div class="appHowWorksCard">
-              <div class="appHowWorksCard__tip">03 Step</div>
-              <div class="appHowWorksCard__descr">
-                <h5 class="appHowWorksCard__title">Tap “Add to Home Screen”</h5>
-                <div class="appHowWorksCard__text">
-                  Press
-                  <strong class="accent-w">“Add to Home Screen”</strong> in the
-                  list popup to add the app to your home screen.
-                </div>
-              </div>
-            </div>
-            <div class="appHowWorksCard appHowWorksCard--last">
-              <img
-                class="appHowWorksCard__tinyImg"
-                src="./img/tiny_icon_claps.svg"
-                alt="tiny icon claps"
-              />
-              <div class="appHowWorksCard__descr appHowWorksCard__descr--last">
-                <div class="appHowWorksCard__text appHowWorksCard__text--last">
-                  The <strong class="accent-w">Claps</strong> icon will appear
-                  on your home screen — open it like a regular app
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="btn btn--onlyMobile installAppBtn" href="#">Install App</a>
-      </section> -->
-      <!-- <section class="how_2 sec-top-spacing">
-        <div class="how_2__title">WHY INSTALL?</div>
-        <div class="how_2__content">
-          <div class="howCard_2">
-            <div class="howCard_2__content">
-              <div class="howCard_2__counter">
-                <div class="howCard_2__svg">
-                  <img
-                    class="howCard_2__svg-icon"
-                    src="./img/lightingIcon.svg"
-                    alt=" No Stores"
-                  />
-                </div>
-                <div class="howCard_2__number">01</div>
-              </div>
-              <div>
-                <div class="howCard_2__title" style="--bg: #ae6bb5">
-                  Fast Launch
-                </div>
-                <p class="howCard_2__info">
-                  Start playing instantly from your home screen — no loading
-                  time
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="howCard_2">
-            <div class="howCard_2__content">
-              <div class="howCard_2__counter">
-                <div class="howCard_2__svg">
-                  <img
-                    class="howCard_2__svg-icon"
-                    src="./img/phoneIcon.svg"
-                    alt=" No Stores"
-                  />
-                </div>
-                <div class="howCard_2__number">02</div>
-              </div>
-              <div>
-                <div class="howCard_2__title" style="--bg: #a9a71e">
-                  No Stores
-                </div>
-                <p class="howCard_2__info">
-                  Install directly from your browser — no App Store or Google
-                  Play needed
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="howCard_2">
-            <div class="howCard_2__content">
-              <div class="howCard_2__counter">
-                <div class="howCard_2__svg">
-                  <img
-                    class="howCard_2__svg-icon"
-                    src="./img/bellIcon.svg"
-                    alt="Instant Alerts"
-                  />
-                </div>
-                <div class="howCard_2__number">03</div>
-              </div>
-              <div>
-                <div class="howCard_2__title" style="--bg: #fd5022">
-                  Instant Alerts
-                </div>
-                <p class="howCard_2__info">
-                  Get quick notifications about new bonuses and free spins
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="howCard_2">
-            <div class="howCard_2__content">
-              <div class="howCard_2__counter">
-                <div class="howCard_2__svg">
-                  <img
-                    class="howCard_2__svg-icon"
-                    src="./img/moneyIcon.svg"
-                    alt="Exclusive Bonus"
-                  />
-                </div>
-                <div class="howCard_2__number">04</div>
-              </div>
-              <div>
-                <div class="howCard_2__title" style="--bg: #fd9572">
-                  Exclusive Bonus
-                </div>
-                <p class="howCard_2__info">
-                  Enjoy special rewards available only in the Claps app
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- <section class="banner sec-top-spacing">
-        <picture>
-          <source
-            srcset="./img/banner_2_360_1x.webp 1x, ./img/banner_2_360_2x.webp 2x"
-            type="image/webp"
-            media="(max-width: 576px)"
-          />
-          <source
-            srcset="
-              ./img/banner_2_1366_1x.webp 1x,
-              ./img/banner_2_1366_2x.webp 2x
-            "
-            media="(max-width: 1366px)"
-          />
-          <source
-            srcset="
-              ./img/banner_2_1920_1x.webp 1x,
-              ./img/banner_2_1920_2x.webp 2x
-            "
-            type="image/webp"
-          />
-          <img
-            class="banner__img"
-            src="./img/banner_2_1920_1x.webp"
-            alt="Sweet Holiday Chase Ифттук"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-        <div class="banner__content banner__content--third">
-          <div class="banner__items">
-            <h2
-              class="banner__title banner__title--third"
-              data-max-size="40"
-              data-min-size="18"
-              data-lines="1"
-              data-scale="1"
-              data-max-size-mob="32"
-              data-min-size-mob="24"
-              data-lines-mob="2"
-              data-scale-mob="1"
-              data-lh-ratio="1"
-            >
-              Rules & Conditions:
-            </h2>
-            <p
-              class="banner__subtitle banner__subtitle--third"
-              data-max-size="18"
-              data-min-size="9"
-              data-lines="2"
-              data-max-size-mob="19"
-              data-min-size-mob="15"
-              data-lines-mob="2"
-              data-lh-ratio="1"
-              data-scale="1"
-            >
-              Earn more from every bet.<br>Get your rakeback every week!
-            </p>
-          </div>
-          <ul class="banner__list">
-              <li>
-                VIP Bet is available for Single, Express, and System types
-              </li>
-              <li>
-                Applies to Pre-Match events
-              </li>
-              <li>
-                The organizer solely determines which events qualify for VIP bets
-              </li>
-              <li>
-                Bet results are settled according to the site’s general rules
-              </li>
-              <li>
-                The preferred amount must be 10% higher than the max amount.
-              </li>
-              <li>
-                A VIP bet cannot be changed or canceled after confirmation
-              </li>
-            </ul>
-          <a class="banner__btn banner__btn--second" href=#
-            >place VIP Bet</a
-          >
-        </div>
-      </section> -->
+      </div>
     </div>
 
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>
