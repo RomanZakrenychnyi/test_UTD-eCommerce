@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  height: 816px;
+  height: auto;
 }
 
 .collection-list {
@@ -19,10 +19,9 @@
     font-size: 28px;
     line-height: 34px;
     color: #9d9d9d;
-
     border-bottom: 1px solid #dcdcdc;
     &--active {
-      color: #000000;
+      color: #000;
     }
   }
   &__arrow-icon {
@@ -51,11 +50,28 @@
 
 .product-card {
   position: relative;
-  padding: 16px;
+  padding: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   flex-basis: 50%;
   border-radius: 16px;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+  &__main-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+  }
   &__image {
     position: absolute;
     top: 0;
@@ -65,34 +81,38 @@
     object-fit: cover;
     z-index: -1;
   }
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
   &__top-elements {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    z-index: 2;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 16px;
+  }
+  &__info {
+    padding-inline: 32px;
+    padding-block: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 16px;
   }
   &__tags {
     display: flex;
     flex-direction: column;
     gap: 4px;
-  }
-  &__tag {
-    padding-inline: 16px;
-    padding-block: 8px;
-
-    font-size: 14px;
-    line-height: 18px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    &--sale {
-      color: #ffffff;
-      background-color: #e41616;
-    }
+    z-index: 3;
   }
   &__actions {
     display: flex;
@@ -100,6 +120,19 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    z-index: 3;
+  }
+  &__tag {
+    padding-inline: 16px;
+    padding-block: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #fff;
+    border-radius: 8px;
+    &--sale {
+      color: #fff;
+      background-color: #e41616;
+    }
   }
   &__action-btn {
     display: flex;
@@ -107,25 +140,13 @@
     justify-content: center;
     width: 48px;
     height: 48px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 16px;
     border: 1px solid #dcdcdc;
   }
   &__action-icon {
     width: 24px;
     height: 24px;
-  }
-  &__info {
-    padding-inline: 32px;
-    padding-block: 24px;
-
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background-color: #ffffff;
-    border-radius: 16px;
   }
   &__name {
     display: inline-block;
@@ -138,7 +159,6 @@
     gap: 8px;
     font-size: 16px;
     line-height: 24px;
-
     &-current {
       color: #e41616;
     }
@@ -155,7 +175,7 @@
     gap: 24px;
   }
   .best-sellers {
-    padding-inline: 0px;
+    padding-inline: 0;
     flex-basis: auto;
     &__title {
       margin-bottom: 24px;
@@ -164,13 +184,24 @@
     }
   }
   .collection-list__link {
-    padding-inline: 0px;
+    padding-inline: 0;
     font-size: 22px;
     line-height: 28px;
-    color: #000000;
+    color: #000;
   }
   .product-card {
-    padding: 8px;
+    padding: 0;
+    &::before {
+      padding-top: 100%;
+    }
+    &__wrapper {
+      padding: 8px;
+    }
+    &__top-elements {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+    }
     &__actions {
       flex-direction: column-reverse;
       gap: 4px;
@@ -188,10 +219,8 @@
       height: 40px;
     }
     &__action-icon {
-    width: 16px;
-    height: 16px;
-  }
+      width: 16px;
+      height: 16px;
+    }
   }
 }
-
-// @include mixin.fluid-prop(top, -116px, -140px, 360px, 1920px);

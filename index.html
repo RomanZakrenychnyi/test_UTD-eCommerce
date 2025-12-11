@@ -124,7 +124,10 @@
         </div>
 
         <div class="product-card">
-          <picture>
+    
+    <a href="/product-page-link-dynamic" class="product-card__main-link">
+        
+        <picture>
             <source
               media="(max-width: 420px)"
               srcset="
@@ -148,65 +151,53 @@
               class="product-card__image"
               loading="lazy"
             />
-          </picture>
+        </picture>
 
-          <div class="product-card__wrapper">
-            <div class="product-card__top-elements">
-              <div class="product-card__tags">
-                <span class="product-card__tag">New</span>
-                <span class="product-card__tag product-card__tag--sale"
-                  >Sale</span
-                >
-              </div>
-
-              <div class="product-card__actions">
-                <button
-                  class="product-card__action-btn product-card__action-btn--wishlist js-wishlist-toggle"
-                  aria-label="Add to wishlist"
-                >
-                  <!-- <svg class="product-card__action-icon">
-                    <use href="./img/heart.svg"></use>
-                  </svg> -->
-                  <picture>
-                    <source media="(max-width: 991px)" srcset="/img/flag.svg" />
-                    <img
-                      src="./img/heart.svg"
-                      alt="Add to wishlist"
-                      class="product-card__action-icon js-wishlist-icon"
-                    />
-                  </picture>
-                </button>
-
-                <button
-                  class="product-card__action-btn product-card__action-btn--quickview js-quickview-open"
-                  aria-label="Quick view"
-                >
-                  <picture>
-                    <source
-                      media="(max-width: 991px)"
-                      srcset="/img/eye_mob.svg"
-                    />
-                    <img
-                      src="./img/eye.svg"
-                      alt="Іконка дії"
-                      class="product-card__action-icon"
-                    />
-                  </picture>
-                </button>
-              </div>
-            </div>
-
+        <div class="product-card__wrapper">
+            
             <div class="product-card__info product-card__info--overlay">
-              <span class="product-card__name"
-                >Butterfly - Hope And Rebirth</span
-              >
+              <span class="product-card__name">Butterfly - Hope And Rebirth</span>
               <div class="product-card__price">
                 <span class="product-card__price-current">₴1,424.00</span>
                 <span class="product-card__price-old">₴1,424.00</span>
               </div>
             </div>
-          </div>
+            
         </div>
+    </a>
+    
+    <div class="product-card__top-elements">
+        <div class="product-card__tags">
+            <span class="product-card__tag">New</span>
+            <span class="product-card__tag product-card__tag--sale">Sale</span>
+        </div>
+
+        <div class="product-card__actions">
+            <button
+                class="product-card__action-btn product-card__action-btn--wishlist js-wishlist-toggle"
+                aria-label="Add to wishlist"
+            >
+                <img
+                    src="./img/heart.svg"
+                    alt="Add to wishlist"
+                    class="product-card__action-icon js-wishlist-icon"
+                />
+            </button>
+
+            <button
+                class="product-card__action-btn product-card__action-btn--quickview js-quickview-open"
+                aria-label="Quick view"
+            >
+                <img
+                    src="./img/eye.svg"
+                    alt="Quick view icon"
+                    class="product-card__action-icon"
+                />
+            </button>
+        </div>
+    </div>
+    
+</div>
       </div>
     </div>
 
