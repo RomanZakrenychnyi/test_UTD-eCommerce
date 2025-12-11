@@ -398,6 +398,7 @@ body {
   font-style: normal;
   color: #000000;
   letter-spacing: 0%;
+  overflow: hidden;
 }
 
 .mainContainer {
@@ -426,7 +427,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 28px;
+  font-size: clamp(22px, calc(22px + (var(--content-vw, 100vw) - 991px) * 0.0064585576), 28px);
   line-height: 34px;
   color: #9d9d9d;
   border-bottom: 1px solid #dcdcdc;
@@ -453,7 +454,7 @@ body {
 }
 .best-sellers__title {
   margin-bottom: 64px;
-  font-size: 38px;
+  font-size: clamp(28px, calc(28px + (var(--content-vw, 100vw) - 991px) * 0.0107642626), 38px);
   line-height: 46px;
 }
 
