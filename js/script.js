@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ["New"],
       false,
       {
-        desktop1x: "/img/product-large-desktop-mantra-1x.webp",
-        desktop2x: "/img/product-large-desktop-mantra-2x.webp",
-        mobile991_1x: "/img/product-large-desktop-mantra-1x.webp",
-        mobile991_2x: "/img/product-large-desktop-mantra-2x.webp",
-        mobile420_1x: "/img/product-small-420w-mantra-1x.webp",
-        mobile420_2x: "/img/product-small-420w-mantra-2x.webp",
+        desktop1x: "./img/product-large-desktop-mantra-1x.webp",
+        desktop2x: "./img/product-large-desktop-mantra-2x.webp",
+        mobile991_1x: "./img/product-large-desktop-mantra-1x.webp",
+        mobile991_2x: "./img/product-large-desktop-mantra-2x.webp",
+        mobile420_1x: "./img/product-small-420w-mantra-1x.webp",
+        mobile420_2x: "./img/product-small-420w-mantra-2x.webp",
       }
     ),
 
@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ["New", "Sale"],
       false,
       {
-        desktop1x: "/img/product-large-desktop-1x.webp",
-        desktop2x: "/img/product-large-desktop-2x.webp",
-        mobile991_1x: "/img/product-large-desktop-1x.webp",
-        mobile991_2x: "/img/product-large-desktop-2x.webp",
-        mobile420_1x: "/img/product-small-420w-1x.webp",
-        mobile420_2x: "/img/product-small-420w-2x.webp",
+        desktop1x: "./img/product-large-desktop-1x.webp",
+        desktop2x: "./img/product-large-desktop-2x.webp",
+        mobile991_1x: "./img/product-large-desktop-1x.webp",
+        mobile991_2x: "./img/product-large-desktop-2x.webp",
+        mobile420_1x: "./img/product-small-420w-1x.webp",
+        mobile420_2x: "./img/product-small-420w-2x.webp",
       }
     ),
 
@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ["Must Have"],
       false,
       {
-        desktop1x: "/img/product-large-desktop-statement-1x.webp",
-        desktop2x: "/img/product-large-desktop-statement-2x.webp",
-        mobile991_1x: "/img/product-large-desktop-statement-1x.webp",
-        mobile991_2x: "/img/product-large-desktop-statement-2x.webp",
-        mobile420_1x: "/img/product-small-420w-statement-1x.webp",
-        mobile420_2x: "/img/product-small-420w-statement-2x.webp",
+        desktop1x: "./img/product-large-desktop-statement-1x.webp",
+        desktop2x: "./img/product-large-desktop-statement-2x.webp",
+        mobile991_1x: "./img/product-large-desktop-statement-1x.webp",
+        mobile991_2x: "./img/product-large-desktop-statement-2x.webp",
+        mobile420_1x: "./img/product-small-420w-statement-1x.webp",
+        mobile420_2x: "./img/product-small-420w-statement-2x.webp",
       }
     ),
   };
