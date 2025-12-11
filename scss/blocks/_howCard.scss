@@ -1,0 +1,190 @@
+@use "../utils/mixins" as mixin;
+
+.howCard {
+  flex: 1 1 33.333%;
+  max-width: 33.333%;
+  aspect-ratio: 588 / 326;
+  position: relative;
+
+  border-radius: 10px;
+  border: 1px solid transparent; /* товщина бордера */
+  background: linear-gradient(#14141a, #14141a) padding-box,
+    /* внутрішній фон */ linear-gradient(180deg, #197196 0%, #3b3450 100%)
+      border-box; /* бордер */
+
+  overflow: hidden; /* щоб зрізати зображення по радіусу */
+
+  &__pic {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    /* фоновий колір всередині, якщо потрібно */
+    background: #14141a;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* щоб картинка рівно заповнювала */
+    border-radius: inherit; /* на всяк випадок */
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 1;
+    inset: 0;
+    border-radius: inherit;
+    @include mixin.fluid-prop(padding, 12px, 24px, 1367px, 1920px);
+  }
+  &__title {
+    /* Тюнінг через змінні */
+    --bg: #197196; /* фон боксу */
+    --h: 50px; /* висота */
+    --tip: 16px; /* довжина носика */
+    --radius: 5px; /* скруглення лівого боку */
+    --overlap: 0.75px; /* за потреби підкрути 0.5–1px */
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--h);
+    padding: 6px 13px; /* внутрішні відступи */
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--bg);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    line-height: 1; /* щільний текст */
+
+    @include mixin.fluid-prop(font-size, 18px, 24px, 1367px, 1920px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      //   right: calc(-1 * var(--tip));
+      border-left: var(--tip) solid var(--bg);
+      border-top: calc(var(--h) / 2) solid transparent;
+      border-bottom: calc(var(--h) / 2) solid transparent;
+
+      /* зрушуємо вліво на півпікселя для перекриття стику */
+      right: calc(-1 * var(--tip) + var(--overlap));
+
+      /* косметика проти AA-глітчів */
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+  }
+
+  &__info {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    // @include mixin.fluid-prop(width, 160px, 197px, 1367px, 1920px);
+    width: 229px;
+    @include mixin.fluid-prop(font-size, 14px, 16px, 1367px, 1920px);
+    // font-size: 16px;
+    // @include mixin.fluid-prop(margin-top, 10px, 24px, 1367px, 1920px);
+    margin-top: 16px;
+  }
+  &__number {
+    position: absolute;
+    color: #197196;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include mixin.fluid-prop(font-size, 24px, 32px, 1367px, 1920px);
+    @include mixin.fluid-prop(top, 12px, 24px, 1367px, 1920px);
+    @include mixin.fluid-prop(right, 12px, 24px, 1367px, 1920px);
+  }
+}
+@media (max-width: 1366px) {
+  .howCard {
+    aspect-ratio: 404 / 326;
+    &__content {
+      @include mixin.fluid-prop(padding, 12px, 24px, 1024px, 1366px);
+    }
+    &__title {
+      // @include mixin.fluid-prop(font-size, 20px, 18px, 1024px, 1366px);
+    }
+    &__info {
+      @include mixin.fluid-prop(width, 140px, 240px, 1024px, 1366px);
+      // @include mixin.fluid-prop(font-size, 12px, 16px, 1024px, 1366px);
+      // @include mixin.fluid-prop(margin-top, 10px, 24px, 1024px, 1366px);
+    }
+    &__number {
+      @include mixin.fluid-prop(font-size, 24px, 32px, 1024px, 1366px);
+      @include mixin.fluid-prop(top, 12px, 24px, 1024px, 1366px);
+      @include mixin.fluid-prop(right, 12px, 24px, 1024px, 1366px);
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .howCard {
+    flex: 1 1 31%;
+    max-width: 31%;
+    &__content {
+      @include mixin.fluid-prop(padding, 8px, 24px, 577px, 1023px);
+    }
+    &__title {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      @include mixin.fluid-prop(--h, 20px, 40px, 577px, 1023px);
+      // @include mixin.fluid-prop(font-size, 14px, 24px, 577px, 1023px);
+      @include mixin.fluid-prop(--tip, 6px, 12px, 577px, 1023px);
+    }
+
+    &__info {
+      @include mixin.fluid-prop(width, 100px, 197px, 577px, 1023px);
+      @include mixin.fluid-prop(font-size, 11px, 16px, 577px, 1023px);
+      // @include mixin.fluid-prop(margin-top, 6px, 16px, 577px, 1023px);
+    }
+    &__number {
+      @include mixin.fluid-prop(font-size, 18px, 28px, 577px, 1023px);
+      @include mixin.fluid-prop(top, 8px, 24px, 577px, 1023px);
+      @include mixin.fluid-prop(right, 8px, 24px, 577px, 1023px);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .howCard {
+    flex: 1 1 100%;
+    max-width: 100%;
+    aspect-ratio: 328 / 193;
+    &__content {
+      @include mixin.fluid-prop(padding, 16px, 24px, 360px, 576px);
+    }
+    &__title {
+      @include mixin.fluid-prop(--h, 41px, 50px, 360px, 576px);
+      // @include mixin.fluid-prop(font-size, 18px, 10px, 360px, 576px);
+      @include mixin.fluid-prop(--tip, 16px, 20px, 360px, 576px);
+    }
+
+    &__info {
+      // @include mixin.fluid-prop(width, 211px, 280px, 360px, 576px);
+      width: 229px;
+      // @include mixin.fluid-prop(font-size, 14px, 24px, 360px, 576px);
+      font-size: 16px;
+      // @include mixin.fluid-prop(margin-top, 16px, 20px, 360px, 576px);
+    }
+    &__number {
+      @include mixin.fluid-prop(font-size, 24px, 30px, 360px, 576px);
+      @include mixin.fluid-prop(top, 16px, 24px, 360px, 576px);
+      @include mixin.fluid-prop(right, 16px, 24px, 360px, 576px);
+    }
+  }
+}

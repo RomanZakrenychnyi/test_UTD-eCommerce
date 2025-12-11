@@ -1,0 +1,196 @@
+@use "../utils/mixins" as mixin;
+
+.rewards {
+  margin-top: 120px;
+  &__flex {
+    @include mixin.fluid-prop(padding-block, 0px, 38px, 1367px, 1920px);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__contaire {
+    flex-basis: 40%;
+  }
+  &__title {
+    margin-bottom: 50px;
+    color: #ffffff;
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    font-size: 40px;
+    // @include mixin.fluid-prop(font-size, 32px, 40px, 1367px, 1920px);
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  &__text {
+    color: #bfbfcb;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &--accent {
+      color: #ffffff;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+  &__cards {
+    flex-basis: 56%;
+  }
+  &__card {
+    position: relative;
+    margin-bottom: 10px;
+    padding-block: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    background: #181921;
+    &-text {
+      color: #bfbfcb;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &--accent {
+        color: #ffffff;
+        font-weight: 700;
+      }
+    }
+    &-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 16px;
+    }
+    &-number {
+      position: absolute;
+      top: 15px;
+      padding-right: 10px;
+      @include mixin.fluid-prop(left, 400px, 640px, 1367px, 1920px);
+      text-align: center;
+      font-family: "Sofia Sans";
+      font-size: 120px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: normal;
+      background: linear-gradient(
+        180deg,
+        #181921 18.06%,
+        rgba(24, 25, 33, 0) 65.97%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  &__svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .rewards {
+    &__title {
+      @include mixin.fluid-prop(font-size, 32px, 40px, 1024px, 1367px);
+      @include mixin.fluid-prop(margin-bottom, 30px, 50px, 1024px, 1367px);
+    }
+    &__svg {
+      @include mixin.fluid-prop(width, 44px, 60px, 577px, 1367px);
+      @include mixin.fluid-prop(height, 44px, 60px, 577px, 1367px);
+    }
+    &__card {
+      &-number {
+        @include mixin.fluid-prop(left, 280px, 460px, 1024px, 1366px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .rewards {
+    &__card {
+      &-text {
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .rewards {
+    @include mixin.fluid-prop(margin-top, 70px, 120px, 577px, 1023px);
+    &__title {
+      @include mixin.fluid-prop(font-size, 32px, 40px, 360px, 1023px);
+      @include mixin.fluid-prop(margin-bottom, 30px, 50px, 577px, 1023px);
+    }
+    &__card {
+      &-number {
+        @include mixin.fluid-prop(left, 290px, 400px, 801px, 1023px);
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .rewards {
+    &__flex {
+      flex-direction: column;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__cards {
+      margin: 0 auto;
+      width: 90%;
+    }
+    &__card {
+      padding-bottom: 36px;
+      &-text {
+        max-width: none;
+      }
+      &-number {
+        @include mixin.fluid-prop(left, 160px, 550px, 360px, 800px);
+      }
+    }
+    &__text {
+      @include mixin.fluid-prop(margin-bottom, 30px, 40px, 577px, 800px);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .rewards {
+    &__title {
+      @include mixin.fluid-prop(margin-bottom, 16px, 30px, 360px, 576px);
+      text-align: left;
+    }
+    &__cards {
+      width: 100%;
+    }
+    &__card {
+      &-number {
+        bottom: -40px;
+        top: 45px;
+        @include mixin.fluid-prop(left, 250px, 440px, 360px, 576px);
+        @include mixin.fluid-prop(font-size, 60px, 80px, 360px, 576px);
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@use "../utils/mixins" as mixin;
+.btn {
+  display: flex;
+  max-width: 360px;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  padding: 10px 16px;
+  margin: 30px auto 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid #E5FF3A;
+  background: #E5FF3A;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  color: #2A2E0A;
+  &:hover {
+    border: 1px solid #D1EC26;
+    background: #D1EC26;
+  }
+  &--onlyMobile {
+    display: none;
+    @media (max-width: 1023px) {
+      display: flex;
+    }
+  }
+  &__second {
+    flex-direction: column;
+    gap: 0;
+    line-height: 0.95;
+    @include mixin.fluid-prop(padding-block, 4px, 8px, 576px, 1920px);
+    @include mixin.fluid-prop(padding-inline, 6px, 10px, 576px, 1920px);
+  }
+  &__odds {
+    font-size: 14px;
+    text-transform: none;
+    font-weight: 400;
+    &--accent {
+      font-weight: 900;
+    }
+  }
+  &__third {
+    @include mixin.fluid-prop(margin-top, 30px, 50px, 576px, 1920px);
+  }
+}
+@media (max-width: 576px) {
+  .btn {
+    // width: 100%;
+    // @include mixin.fluid-prop(height, 40px, 72px, 360px, 576px);
+    &__second {
+      font-size: 14px;
+    }
+    &__odds {
+      font-size: 12px;
+    &--accent {
+      font-weight: 900;
+    }
+  }
+  }
+}

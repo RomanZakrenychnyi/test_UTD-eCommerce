@@ -1,0 +1,597 @@
+@use "../utils/mixins" as mixin;
+
+// COLOR
+$color-text-primary: #ffffff;
+$color-text-secondary: #BFBFCB;
+$color-text-btn: #2A2E0A;
+$color-text-red: #FD5022;
+$color-text-grey-blue: #8587A2;
+$color-text-purple: #AE6BB5;
+$color-text-olive-yellow: #A9A71E;
+
+// BACKGROUND
+$bgc-general: #14141A;
+$bgc-btn: #E5FF3A;
+$bgc-red: #FD5022;
+$bgc-purple: #AE6BB5;
+$bgc-olive-yellow: #A9A71E;
+
+// --- ЗАГАЛЬНА СТРУКТУРА ТА ТЕКСТ ---
+.cashback-levels {
+  margin-top: 120px;
+  container-type: inline-size;
+  container-name: main-content;
+  contain: layout;
+
+  &__title {
+    margin-bottom: 16px;
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    margin-bottom: 38px;
+    color: #BFBFCB;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &__content-wrap {
+    position: relative;
+    max-width: 1760px;
+    margin: 0 auto;
+  }
+  
+  &__top-row,
+  &__bottom-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  // --- ЕЛЕМЕНТИ РІВНІВ (ТОП) ---
+  &__item-top {
+    position: relative;
+    width: 30%;
+    text-align: center;
+    border-bottom: 1px solid #3b3450;
+  
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    &--first {
+      background-image: url(../../img/ellipse_first_top.webp);
+    }
+    &--second {
+      background-image: url(../../img/ellipse_second_top.webp);
+    }
+    &--third {
+      background-image: url(../../img/ellipse_third_top.webp);
+    }
+  }
+  
+  &__percent-wrapper {
+    position: relative;
+    height: 168px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  &__percent {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    transition: transform 0.5s ease-out;
+    font-size: clamp(80px, 7.81vw, 150px);
+    font-weight: 400;
+    text-transform: uppercase;
+  ;
+    &--first {
+      background: linear-gradient(180deg, #794714 0%, rgba(121, 71, 20, 0.00) 68.75%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &--second {
+      background: linear-gradient(180deg, #C9B037 0%, rgba(201, 176, 55, 0.00) 68.75%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &--third {
+      background: linear-gradient(180deg, #A8A9AD 0%, rgba(168, 169, 173, 0.00) 68.75%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__btn {
+    margin-top: 50px;
+  }
+}
+
+.cashback-levels__item-top.is-active .cashback-levels__percent {
+  transform: translate(-50%, 0);
+}
+
+@media (min-width: 768px) {
+  .cashback-levels__details-content .cashback-levels__percent {
+    display: none;
+  }
+}
+
+// --- ЕЛЕМЕНТИ РІВНІВ (НИЗ) ---
+.cashback-levels__item-bottom {
+  width: 30%;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #3b3450;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  &--first {
+      background-image: url(../../img/ellipse_first_bottom.webp);
+    }
+    &--second {
+      background-image: url(../../img/ellipse_second_bottom.webp);
+    }
+    &--third {
+      background-image: url(../../img/ellipse_third_bottom.webp); 
+    }
+}
+
+.cashback-levels__details-content {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+// ОБ'ЄДНАНО: Видалили .is-active, оскільки використовується тільки .is-hovered
+.cashback-levels__item-bottom.is-active .cashback-levels__details-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cashback-levels__amount {
+  font-size: clamp(24px,2.34vw,45px);
+  font-weight: 400;
+  &--first {
+    color: #794714;
+  }
+  &--second {
+    color: #C9B037;
+  }
+  &--third {
+    color: #A8A9AD;
+  }
+}
+
+.cashback-levels__cashback {
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: clamp(16px, 1.25vw, 24px);
+  font-weight: 700;
+}
+
+.cashback-levels__condition {
+  // max-width: 390px;
+  margin: 0 auto;
+  color: $color-text-secondary;
+  font-size: clamp(16px, 0.935vw, 18px);
+  font-weight: 400;
+}
+
+.cashback-levels__condition--white {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+// --- ТРЕК ПРОГРЕС-БАРА ---
+.cashback-levels__track-wrapper {
+  margin-block: 40px;
+}
+
+.cashback-levels__track {
+  position: relative;
+  z-index: 1;
+  max-width: 1760px;
+  width: 100%;
+  margin: 0 auto; // Видалили дублювання margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.cashback-levels__segment {
+  width: 35px;
+  height: 22px;
+  flex-shrink: 0;
+
+  padding: 3px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-image: linear-gradient(180deg, #A8A9AD 0%, #575654 100%) 1;
+}
+
+.cashback-levels__bar {
+  width: 100%;
+  height: 100%;
+  border-radius: 1px;
+  background: linear-gradient(180deg, #575654 0%, #A8A9AD 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  visibility: hidden;
+}
+
+// --- АНІМАЦІЯ БАРА (SCSS Логіка) ---
+$total-segments: 42;
+$mobile-segments: 27;
+$segments-for-small-mobile: 25;
+$single-fill-duration: 0.25s;
+$breakpoint-tablet: 1366px;
+$breakpoint-mobile: 767px;
+
+@keyframes segment-fill {
+  to {
+    transform: scaleX(1);
+    visibility: visible;
+  }
+}
+
+@keyframes segment-fill-vertical {
+  to {
+    transform: scaleY(1);
+    visibility: visible;
+  }
+}
+
+@for $i from 1 through $total-segments {
+  .cashback-levels__segment.is-active:nth-child(#{$i}) .cashback-levels__bar {
+    animation-name: segment-fill;
+    animation-duration: $single-fill-duration;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+
+    animation-delay: ($i - 1) * $single-fill-duration;
+
+    @if $i == 1 {
+      animation-duration: 0.001s;
+    }
+  }
+}
+
+// --- АДАПТИВНІСТЬ ТРЕКУ ---
+@container main-content (max-width: 1845px) {
+  @for $i from 41 through 42 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1770px) {
+  @for $i from 39 through 40 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1700px) {
+  @for $i from 38 through 38 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1610px) {
+  @for $i from 36 through 37 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1520px) {
+  @for $i from 34 through 35 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1430px) {
+  @for $i from 32 through 33 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1340px) {
+  @for $i from 30 through 31 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1250px) {
+  @for $i from 28 through 29 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1160px) {
+  @for $i from 26 through 27 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 1070px) {
+  @for $i from 24 through 25 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 980px) {
+  @for $i from 22 through 23 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 890px) {
+  @for $i from 20 through 21 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+@container main-content (max-width: 800px) {
+  @for $i from 18 through 19 {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+
+@container main-content (max-width: 767px) {
+  .cashback-levels__segment:nth-child(5) {
+    box-shadow: -40px 0 50px 60px rgba(121, 71, 20, 0.4);
+    background: #79471466;
+  }
+  .cashback-levels__segment:nth-child(14) {
+    box-shadow: -40px 0 50px 60px rgba(201, 176, 55, 0.4);
+    background: #C9B03766;
+  }
+  .cashback-levels__segment:nth-child(24) {
+    box-shadow: -40px 0 50px 60px rgba(168, 169, 173, 0.4);
+    background: #A8A9AD66;
+  }
+}
+
+// @media (max-width: #{$breakpoint-tablet}) {
+//   @for $i from 33 through $total-segments {
+//     .cashback-levels__segment:nth-child(#{$i}) {
+//       display: none;
+//     }
+//   }
+// }
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .cashback-levels__percent {
+    position: static;
+    transform: translate(0);
+    &--first {
+      background: linear-gradient(180deg, #794714 0%, rgba(121, 71, 20, 0) 82%);
+      background-clip: text;
+    }
+    &--second {
+      background: linear-gradient(180deg, #C9B037 0%, rgba(201, 176, 55, 0) 82%);
+      background-clip: text;
+    }
+    &--third {
+      background: linear-gradient(180deg, #A8A9AD 0%, rgba(168, 169, 173, 0) 82%);
+      background-clip: text;
+    }
+  }
+
+  @for $i from 1 through $mobile-segments {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: block;
+    }
+  }
+
+  @for $i from ($segments-for-small-mobile + 1) through $mobile-segments {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+
+  @for $i from ($mobile-segments + 1) through $total-segments {
+    .cashback-levels__segment:nth-child(#{$i}) {
+      display: none;
+    }
+  }
+}
+
+@container main-content (max-width: 395px) {
+  .cashback-levels__segment:nth-child(26),
+  .cashback-levels__segment:nth-child(27) {
+    display: block;
+  }
+}
+
+// --- МАРКЕР ТА ХІТБОКС ---
+.cashback-levels__svg-trigger {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: $bgc-general;
+  background: $bgc-btn;
+  border-radius: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cashback-levels__marker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: transform 0.5s ease-out;
+  transform: rotate(0deg);
+}
+
+.cashback-levels__svg-trigger.is-active .cashback-levels__marker-icon {
+  transform: rotate(45deg);
+}
+
+.cashback-levels__hitbox-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cashback-levels__hitbox {
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+}
+
+// -------------------------------------------------------------------
+// --- АДАПТИВНІСТЬ: МОБІЛЬНА ВЕРСІЯ (< 767px) ---
+// -------------------------------------------------------------------
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .cashback-levels {
+    margin-top: 70px;
+
+    &__title {
+      font-size: clamp(32px, 5.345vw, 40px);
+    }
+
+    &__subtitle {
+      margin-bottom: 30px;
+    }
+    &__hitbox-row {
+      display: none;
+    }
+  
+    &__top-row {
+      display: none;
+    }
+  
+    &__bottom-row {
+      flex-direction: column;
+    }
+  
+    &__svg-trigger {
+      display: none;
+    }
+  
+    &__content-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+    }
+  
+    &__track {
+      flex-direction: column;
+      gap: 4.5px;
+    }
+  
+    &__bar {
+      transform: scaleY(0);
+      transform-origin: top;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__segment {
+      padding: 3.5px;
+    }
+
+    &__track-wrapper {
+      position: relative;
+      z-index: 10;
+      margin-block: 0;
+      margin-top: 20px;
+    }
+
+    &__item-bottom {
+      padding-block: 20px;
+      width: 100%;
+      overflow: visible;
+      position: relative;
+      z-index: 1;
+
+      background-image: none;
+    }
+
+    &__item-bottom:not(:last-child) {
+      border-top: none;
+      border-bottom: 1px solid #3b3450;
+    }
+
+    &__amount {
+      margin-bottom: 4px;
+    }
+
+    &__cashback {
+      margin-bottom: 12px;
+    }
+
+    &__details-content {
+      text-align: left;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+    }
+    &__condition {
+      margin: 0;
+    }
+    &__btn {
+      margin-top: 40px;
+    }
+  }
+
+  @for $i from 1 through $total-segments {
+    .cashback-levels__segment.is-active:nth-child(#{$i}) .cashback-levels__bar {
+      animation-name: segment-fill-vertical; // !!! ВЕРТИКАЛЬНА АНІМАЦІЯ !!!
+      animation-duration: $single-fill-duration;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+      animation-delay: ($i - 1) * $single-fill-duration;
+      @if $i == 1 {
+        animation-duration: 0.001s;
+      }
+    }
+  }
+
+  .cashback-levels__item-bottom.is-active .cashback-levels__details-content {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

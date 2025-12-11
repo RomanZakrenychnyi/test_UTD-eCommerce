@@ -1,0 +1,346 @@
+@use "../utils/mixins" as mixin;
+
+.request {
+  padding-bottom: 120px;
+  text-align: center;
+  background-image: url(../../img/request_bg_1920.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__title {
+    margin-bottom: 50px;
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  &__cards {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 100%;
+    @include mixin.fluid-prop(max-width, 1020px, 1200px, 1367px, 1920px);
+    height: 362px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // @include mixin.fluid-prop(gap, 0px, 40px, 1367px, 1920px);
+  }
+  &__card {
+    position: relative;
+    padding-top: 80px;
+    padding-left: 60px;
+    padding-right: 55px;
+    width: 362px;
+    height: 362px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-radius: 50%;
+    border: 1px solid rgba(254, 189, 123, 0.1);
+    overflow: hidden;
+    z-index: 0;
+    &--first {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url(../../img/card_bg_first.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      &:hover .request__card-volleyball {
+        transform: translate(-10px, -15px);
+      }
+    }
+    &--second {
+      position: absolute;
+      top: 0;
+      background-image: url(../../img/card_bg_second.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      &:hover .request__card-tennis {
+        transform: translate(-10px, -15px);
+      }
+    }
+    &--third {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url(../../img/card_bg_third.webp);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      &:hover .request__card-basketball {
+        transform: translate(-10px, -15px);
+      }
+    }
+    &-volleyball {
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+      transition: transform 0.3s ease-out;
+    }
+    &-tennis {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      transition: transform 0.3s ease-out;
+    }
+    &-basketball {
+      position: absolute;
+      bottom: -15px;
+      right: -30px;
+      transition: transform 0.3s ease-out;
+    }
+  }
+
+  &__text-wrapper {
+    text-align: left;
+  }
+  &__text-upper {
+    margin-bottom: 20px;
+    display: flex;
+    width: 35%;
+    height: 28px;
+    padding: 12px 16px 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    border-radius: 100px;
+    background: #ae6bb5;
+    text-transform: uppercase;
+  }
+  &__text-lower {
+    color: #bfbfcb;
+    @include mixin.fluid-prop(font-size, 16px, 18px, 1367px, 1920px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &--accent {
+      font-weight: 700;
+      color: #ffffff;
+    }
+  }
+  &__card-number {
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    background: linear-gradient(
+      180deg,
+      #febd7b -111.79%,
+      rgba(20, 20, 26, 0) 65.34%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__note {
+    display: inline-block;
+    padding: 16px 24px;
+    text-align: center;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #181921;
+    &-text {
+      color: #bfbfcb;
+      font-size: 18px;
+      @include mixin.fluid-prop(font-size, 16px, 18px, 1367px, 1920px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &--accent {
+        color: #ffffff;
+        font-weight: 700;
+      }
+    }
+  }
+  &__btnBlock {
+    margin-top: 50px;
+    @include mixin.fluid-prop(gap, 8px, 28px, 577px, 1920px);
+  }
+  &__btn {
+    margin: 0 auto;
+    display: flex;
+    max-width: 315px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #e5ff3a;
+    background: #e5ff3a;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    color: #2a2e0a;
+
+    &:hover {
+      border: 1px solid #d1ec26;
+      background: #d1ec26;
+    }
+  }
+}
+
+.br_mobile {
+  display: none;
+}
+
+@media (max-width: 1366px) {
+  .request {
+    background-image: url(../../img/request_bg_1366.webp);
+    &__btn {
+      @include mixin.fluid-prop(height, 40px, 50px, 577px, 1366px);
+      @include mixin.fluid-prop(font-size, 16px, 18px, 360px, 1366px);
+    }
+    &__card {
+      @include mixin.fluid-prop(width, 280px, 362px, 1025px, 1366px);
+      @include mixin.fluid-prop(height, 280px, 362px, 1025px, 1366px);
+      @include mixin.fluid-prop(padding-top, 60px, 80px, 1025px, 1366px);
+      @include mixin.fluid-prop(padding-left, 50px, 60px, 1025px, 1366px);
+      &-volleyball {
+        @include mixin.fluid-prop(width, 120px, 162px, 800px, 1366px);
+        @include mixin.fluid-prop(height, 120px, 162px, 800px, 1366px);
+      }
+      &-tennis {
+        @include mixin.fluid-prop(width, 120px, 162px, 800px, 1366px);
+        @include mixin.fluid-prop(height, 120px, 162px, 800px, 1366px);
+      }
+      &-basketball {
+        @include mixin.fluid-prop(width, 120px, 162px, 800px, 1366px);
+        @include mixin.fluid-prop(height, 120px, 162px, 800px, 1366px);
+      }
+      &-number {
+        @include mixin.fluid-prop(font-size, 90px, 120px, 800px, 1366px);
+      }
+    }
+    &__text-upper {
+      width: 45%;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .request {
+    @include mixin.fluid-prop(padding-bottom, 70px, 120px, 577px, 1024px);
+    &__title {
+      @include mixin.fluid-prop(font-size, 32px, 40px, 577px, 1024px);
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .request {
+    &__cards {
+      flex-direction: column;
+      height: auto;
+      @include mixin.fluid-prop(gap, 5px, 30px, 577px, 800px);
+    }
+    &__card {
+      position: relative;
+      width: 328px;
+      height: 328px;
+      padding-top: 80px;
+      padding-left: 60px;
+      &-volleyball {
+        bottom: -30px;
+        right: -30px;
+        width: 162px;
+        height: 162px;
+      }
+      &-tennis {
+        top: auto;
+        bottom: -30px;
+        right: -30px;
+        width: 162px;
+        height: 162px;
+      }
+      &-basketball {
+        bottom: -30px;
+        right: -30px;
+        width: 162px;
+        height: 162px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .request {
+    background-image: url(../../img/request_bg_360.webp);
+    padding-bottom: 70px;
+    background-position: top;
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__cards {
+      position: static;
+      margin-bottom: 30px;
+      flex-direction: column;
+      gap: 5px;
+    }
+    &__card {
+      width: 328px;
+      height: 328px;
+      padding-left: 40px;
+      justify-content: flex-start;
+      &-number {
+        font-size: 90px;
+      }
+      &-volleyball {
+        bottom: -30px;
+        right: -30px;
+      }
+      &-tennis {
+        top: auto;
+        bottom: -30px;
+        right: -30px;
+      }
+      &-basketball {
+        bottom: -30px;
+        right: -30px;
+      }
+      &--first {
+        background-image: url(../../img/card_bg_mob.webp);
+      }
+      &--second {
+        background-image: url(../../img/card_bg_mob.webp);
+      }
+      &--third {
+        background-image: url(../../img/card_bg_mob.webp);
+      }
+    }
+    &__text-upper {
+      margin-bottom: 10px;
+      width: 36%;
+      font-size: 14px;
+    }
+    &__btnBlock {
+      margin-top: 40px;
+    }
+    &__btn {
+      padding: 10px 16px;
+      border-radius: 6px;
+      width: 100%;
+      @include mixin.fluid-prop(height, 40px, 50px, 360px, 576px);
+      @include mixin.fluid-prop(font-size, 14px, 18px, 360px, 576px);
+    }
+  }
+  .br_mobile {
+    display: inline-block;
+  }
+}

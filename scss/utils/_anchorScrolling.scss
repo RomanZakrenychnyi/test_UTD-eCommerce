@@ -1,0 +1,13 @@
+:root { --spacing-from-top: 72px; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#videoGuide {
+    scroll-margin-top: var(--spacing-from-top, 72px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

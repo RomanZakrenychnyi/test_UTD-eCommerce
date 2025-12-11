@@ -1,0 +1,228 @@
+@use "../utils/mixins" as mixin;
+
+.howCard_2 {
+  flex: 1 1 25%;
+  max-width: 25%;
+  // aspect-ratio: 566 / 245;
+
+  border-radius: 10px;
+  background: #181921;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:nth-child(1) {
+    --c1: rgba(174, 107, 181, 1);
+  }
+  &:nth-child(2) {
+    --c1: rgba(169, 167, 30, 1);
+  }
+  &:nth-child(3) {
+    --c1: rgba(253, 80, 34, 1);
+  }
+  &:nth-child(4) {
+    --c1: rgba(253, 149, 114, 1);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(var(--c1)),
+      to(#14141a)
+    );
+    background: linear-gradient(180deg, var(--c1) 0%, #14141a 100%);
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 9px;
+    background: linear-gradient(
+      330deg,
+      color-mix(in srgb, var(--c1) 40%, transparent) 0%,
+      rgba(20, 20, 26, 1) 62%
+    );
+  }
+
+  &__content {
+    inset: 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border-radius: inherit;
+    @include mixin.fluid-prop(padding, 16px, 30px, 1367px, 1920px);
+    gap: 28px;
+  }
+  &__title {
+    /* Тюнінг через змінні */
+    --bg: #ae6bb5; /* фон боксу */
+    --h: 44px; /* висота */
+    --tip: 16px; /* довжина носика */
+    --radius: 5px; /* скруглення лівого боку */
+    --overlap: 0.75px; /* за потреби підкрути 0.5–1px */
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--h);
+    padding: 3px 12px; /* внутрішні відступи */
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--bg);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    line-height: 1; /* щільний текст */
+
+    @include mixin.fluid-prop(font-size, 24px, 32px, 1367px, 1920px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      //   right: calc(-1 * var(--tip));
+      border-left: var(--tip) solid var(--bg);
+      border-top: calc(var(--h) / 2) solid transparent;
+      border-bottom: calc(var(--h) / 2) solid transparent;
+
+      /* зрушуємо вліво на півпікселя для перекриття стику */
+      right: calc(-1 * var(--tip) + var(--overlap));
+
+      /* косметика проти AA-глітчів */
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+  }
+
+  &__info {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include mixin.fluid-prop(font-size, 16px, 18px, 1367px, 1920px);
+    margin-top: 12px;
+    color: #BFBFCB;
+  }
+  &__counter {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  &__number {
+    color: #8587A2;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include mixin.fluid-prop(font-size, 18px, 24px, 360px, 1023px);
+  }
+  &__svg-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+.btn.how_2__btn {
+  margin-top: 50px;
+  margin-left: auto;
+}
+.line_break {
+  display: none;
+}
+@media (max-width: 1366px) {
+  .howCard_2 {
+    // aspect-ratio: 375 / 326;
+    &__content {
+      @include mixin.fluid-prop(padding, 12px, 24px, 1024px, 1366px);
+    }
+    &__title {
+      font-size: clamp(
+        20px,
+        20px + (var(--content-vw, 100vw) - 1024px) * 0.0350877193,
+        24px
+      );
+      // @include mixin.fluid-prop(font-size, 20px, 32px, 1024px, 1366px);
+    }
+    &__info {
+    }
+    &__number {
+      @include mixin.fluid-prop(font-size, 24px, 32px, 1024px, 1366px);
+      @include mixin.fluid-prop(top, 12px, 24px, 1024px, 1366px);
+      @include mixin.fluid-prop(right, 12px, 24px, 1024px, 1366px);
+    }
+  }
+}
+
+
+@media (max-width: 1260px) {
+  .howCard_2 {
+  flex: 1 1 49%;
+  max-width: 49%;
+  }
+}
+@media (max-width: 1023px) {
+  .howCard_2 {
+    &__content {
+      @include mixin.fluid-prop(padding, 8px, 24px, 577px, 1023px);
+    }
+    &__title {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      @include mixin.fluid-prop(--h, 20px, 40px, 577px, 1023px);
+      @include mixin.fluid-prop(font-size, 14px, 24px, 577px, 1023px);
+      @include mixin.fluid-prop(--tip, 6px, 12px, 577px, 1023px);
+    }
+
+    &__info {
+    }
+    &__number {
+      @include mixin.fluid-prop(font-size, 18px, 28px, 577px, 1023px);
+      @include mixin.fluid-prop(top, 8px, 24px, 577px, 1023px);
+      @include mixin.fluid-prop(right, 8px, 24px, 577px, 1023px);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .howCard_2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    // aspect-ratio: 328 / 193;
+    &__content {
+      @include mixin.fluid-prop(padding, 16px, 24px, 360px, 576px);
+    }
+    &__title {
+      @include mixin.fluid-prop(--h, 41px, 50px, 360px, 576px);
+      @include mixin.fluid-prop(font-size, 24px, 28px, 360px, 576px);
+      @include mixin.fluid-prop(--tip, 16px, 20px, 360px, 576px);
+    }
+
+    &__info {
+    }
+    &__number {
+      @include mixin.fluid-prop(font-size, 24px, 30px, 360px, 576px);
+      @include mixin.fluid-prop(top, 16px, 24px, 360px, 576px);
+      @include mixin.fluid-prop(right, 16px, 24px, 360px, 576px);
+    }
+  }
+  .line_break {
+    display: block;
+  }
+  .btn.how_2__btn {
+    margin-top: 40px;
+  }
+}

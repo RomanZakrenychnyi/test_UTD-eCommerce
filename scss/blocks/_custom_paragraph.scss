@@ -1,0 +1,19 @@
+.custom-p {
+  margin: 50px auto 0;
+  max-width: 560px;
+  width: 100%;
+  color: var(--General-Tag_bg_5, #bfbfcb);
+  text-align: center;
+  font-size: 18px;
+  padding: 16px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #181921;
+}
+
+@media (max-width: 576px) {
+  .custom-p {
+    border-radius: 10px;
+    font-size: 16px;
+  }
+}

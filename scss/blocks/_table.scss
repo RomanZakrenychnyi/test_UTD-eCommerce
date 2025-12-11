@@ -1,0 +1,247 @@
+@use "../utils/mixins" as mixin;
+
+.table {
+  margin-top: 120px;
+  margin-inline: -16px;
+  // background-image: image-set(
+  //   url("/img/table_bg_1920.webp") 1x,
+  //   url("/img/table_bg_1920_2x.webp") 2x
+  // );
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0px 50px;
+
+  @media (max-width: 1366px) {
+    @include mixin.fluid-prop(margin-top, 70px, 120px, 576px, 1366px);
+  }
+  @media (max-width: 576px) {
+    margin-top: 70px;
+  }
+
+  &__wrapper {
+    margin-inline: 16px;
+  }
+
+  &__title {
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+
+  &__container {
+    position: relative;
+    border-radius: 10px;
+    container-type: inline-size;
+    background: #181921;
+    padding: 10px;
+    max-width: 860px;
+    margin: 0 auto;
+    // Псевдоелемент для "градієнтного бордера"
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(
+        180deg,
+        #f4aa50 0%,
+        rgba(244, 170, 80, 0) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    // Внутрішній шар (щоб колір фону не затирав бордер)
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: calc(10px - 1px);
+      background: #181921;
+      z-index: 2;
+    }
+
+    // Контент поверх
+    > * {
+      position: relative;
+      z-index: 3;
+    }
+    > :not(.table__decorImg) {
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+  &__decorImg {
+    position: absolute;
+    width: clamp(120px, 30cqi, 265px);
+    aspect-ratio: 265/281;
+    overflow: visible;
+    z-index: 4;
+    pointer-events: none;
+    & > img {
+      position: absolute;
+      width: inherit;
+      // aspect-ratio: inherit;
+      display: block;
+    }
+    &--1 {
+      left: -155px;
+      bottom: -20px;
+      // transform: translate(
+      //   clamp(
+      //     -50%,
+      //     calc(-50% + ((50 - 70) * ((100vw - 360px) / (1366 - 360)))),
+      //     -70%
+      //   ),
+      //   clamp(
+      //     40%,
+      //     calc(40% + ((2 - 40) * ((100vw - 360px) / (1366 - 360)))),
+      //     2%
+      //   )
+      // );
+    }
+    &--2 {
+      right: -180px;
+      top: -160px;
+      width: clamp(110px, 28cqi, 263px);
+      // transform: translate(18%, -40%);
+      aspect-ratio: 263/390;
+      z-index: 0;
+    }
+  }
+
+  // --- Медіазапити для .table ---
+
+  @media (max-width: 1366px) {
+    &__decorImg {
+      // width: 265px;
+      @include mixin.fluid-prop(width, 75px, 243px, 577px, 1366px);
+      &--1 {
+        @include mixin.fluid-prop(left, -90px, -100px, 1025px, 1366px);
+      }
+      &--2 {
+        right: auto;
+        @include mixin.fluid-prop(left, 590px, 800px, 1024px, 1366px);
+        @include mixin.fluid-prop(top, -160px, -160px, 1024px, 1366px);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__title {
+      @include mixin.fluid-prop(font-size, 32px, 40px, 360px, 1023px);
+    }
+    &__decorImg {
+      &--1 {
+        @include mixin.fluid-prop(left, -20px, -155px, 577px, 1024px);
+      }
+      &--2 {
+        top: auto;
+        @include mixin.fluid-prop(bottom, 320px, 320px, 577px, 1024px);
+        right: -20px;
+        left: auto;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    background-image: none;
+  }
+
+  @media (max-width: 576px) {
+    &__decorImg {
+      &--2 {
+        top: -60px;
+        right: 0;
+      }
+    }
+    // background-image: image-set(
+    //   url("/img/eclips_360@1x.webp") 1x,
+    //   url("/img/eclips_360@2x.webp") 2x 
+    // );
+    // padding-block: 120px;
+  }
+}
+
+// -----------------------------------------------------------------------
+
+.prize-table {
+  position: relative;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+
+  .place-column,
+  .prize-column {
+    color: #fff;
+    font-size: clamp(18px, 1.238vw, 24px);
+    font-weight: 700;
+    background-color: #ffffff1a;
+    border-radius: 6px;
+    padding-block: 21px;
+  }
+
+  .medal-img {
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+  }
+
+  .medal-cell {
+    &:nth-child(-n + 3),
+    &:nth-child(-n + 3) + td {
+      background-color: #ffffff0d;
+      // border-radius: 6px;
+    }
+
+    &:nth-child(-n + 3) {
+      padding-block: 8px;
+    }
+  }
+
+  &__body {
+    td {
+      color: #fff;
+      font-size: clamp(16px, 0.929vw, 18px);
+      font-weight: 400;
+      padding-block: 16px;
+      background-color: #ffffff05;
+      border-radius: 6px;
+    }
+
+    // ✅ ДОДАНО: фон для всіх комірок у перших трьох рядках
+    tr:nth-child(-n + 4) td {
+      background-color: #ffffff0d;
+    }
+
+    tr:first-child td {
+      border-top: 3px solid transparent;
+    }
+
+    &--accent {
+      color: #bfbfcb;
+    }
+  }
+
+  // --- Медіазапити для .prize-table ---
+
+  @media (max-width: 767px) {
+    .place-column,
+    .prize-column {
+      padding-block: 16px;
+    }
+
+    &__body td {
+      padding-block: 11px;
+    }
+  }
+}

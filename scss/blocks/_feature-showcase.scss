@@ -1,0 +1,498 @@
+@use "../utils/mixins" as mixin;
+
+// Загальні змінні
+$color-dark-bg: #14141a;
+$color-text-light: #ffffff;
+$color-text-faded: #8587a2;
+$color-accent-btn: #e0ff4f;
+
+// Кольори для кроків
+$step-first-bg: #d25050;
+$step-second-bg: #ae6bb5;
+$step-third-bg: #a9a71e;
+$step-forth-bg: #f5ab51;
+
+.feature-showcase {
+  background-color: $color-dark-bg;
+  color: $color-text-light;
+  font-family: "Sofia Sans", sans-serif;
+  background-image: image-set(
+      url(../../img/feature_bg_1x.webp) 1x,
+      url(../../img/feature_bg_2x.webp) 2x
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  &__title {
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    font-size: clamp(32px, 2.08vw, 40px);
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    
+  }
+
+  // --- ДЕСКТОПНА ВЕРСІЯ (БАЗОВІ СТИЛІ: CSS Grid) ---
+  &__content {
+    // ЗМІНЕНО: Дозволяємо центральній колонці бути гнучкішою,
+    // щоб картки могли зміщуватися ближче.
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 300px) 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 60px;
+    column-gap: 100px;
+    @include mixin.fluid-prop(column-gap, 60px, 200px, 1367px, 1920px);
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  // Центральний елемент займає середину сітки
+  &__center-element {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    max-width: 100%;
+    align-self: center;
+    justify-self: center;
+    // scale: 1.4;
+    z-index: 10;
+
+    .mockup__image {
+      display: block;
+      width: 100%;
+      // @include mixin.fluid-prop(width, 283px, 283px, 1024px, 1920px);
+      height: auto;
+      flex-shrink: 0;
+      aspect-ratio: 283/583;
+    }
+  }
+
+  .step {
+    // Стилі для десктопу
+    position: relative;
+    height: 174px;
+
+    width: 100%; // Обов'язково для роботи 1fr
+    border-radius: 10px;
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   border-radius: inherit;
+    //   pointer-events: none;
+    // }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 10px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &__wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include mixin.fluid-prop(gap, 12px, 24px, 1367px, 1920px);
+      padding-inline: 108px;
+      @include mixin.fluid-prop(padding-inline, 18px, 75px, 1367px, 1920px);
+      border-radius: 10px;
+      z-index: 1;
+      & picture {
+        position: absolute;
+        top: -18px;
+        left: 28px;
+      }
+    }
+
+    &__svg {
+      // position: absolute;
+      // top: -18px;
+      // left: 28px;
+      // display: inline-block;
+      width: 32px;
+      height: 32px;
+      box-sizing: content-box;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: clamp(16px, 1.22vw, 24px);
+      font-weight: 400;
+    }
+
+    &__body {
+    }
+
+    &__number {
+      font-family: "Sofia Sans Extra Condensed";
+      @include mixin.fluid-prop(font-size, 110px, 140px, 1367px, 1920px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      &--first {
+        background: linear-gradient(
+          180deg,
+          #d25050 16.67%,
+          rgba(210, 80, 80, 0) 75%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      &--second {
+        background: linear-gradient(
+          180deg,
+          #ae6bb5 16.67%,
+          rgba(174, 107, 181, 0) 75%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      &--third {
+        background: linear-gradient(
+          180deg,
+          #a9a71e 16.67%,
+          rgba(169, 167, 30, 0) 75%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      &--forth {
+        background: linear-gradient(
+          180deg,
+          #f5ab51 16.67%,
+          rgba(245, 171, 81, 0) 75%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &__title {
+      margin-bottom: 8px;
+      font-size: 24px;
+      @include mixin.fluid-prop(font-size, 18px, 24px, 1367px, 1920px);
+      font-weight: 700;
+    }
+
+    &__description {
+      @include mixin.fluid-prop(font-size, 14px, 18px, 1367px, 1920px);
+      font-weight: 400;
+      color: $color-text-faded;
+    }
+
+    // Позиціонування лівих карток (Колонка 1)
+    &--first {
+      grid-area: 1 / 1 / 2 / 2;
+      justify-content: flex-start;
+      align-self: end;
+      .step__svg {
+        background: $step-first-bg;
+      }
+
+      &::before {
+        background: linear-gradient(180deg, $step-first-bg, #3b3450);
+      }
+      &::after {
+        // background: radial-gradient(
+        //   ellipse 100% 150% at 130% 110%,
+        //   $step-first-bg 0% 0%,
+        //   #14141a 100% 100%
+        // );
+        // background: rgba(255, 255, 255, 0.05);
+
+        // backdrop-filter: blur(8px);
+        background-image: image-set(
+          url(../../img/step_bg_first_1x.webp) 1x,
+          url(../../img/step_bg_first_2x.webp) 2x
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    &--second {
+      grid-area: 2 / 1 / 3 / 2;
+      justify-content: flex-start;
+      .step__svg {
+        background: $step-second-bg;
+      }
+
+      &::before {
+        background: linear-gradient(180deg, $step-second-bg, #3b3450);
+      }
+      &::after {
+        // background: radial-gradient(
+        //   ellipse 100% 150% at 130% 110%,
+        //   $step-second-bg 0% 0%,
+        //   #14141a 100% 100%
+        // );
+        background-image: image-set(
+          url(../../img/step_bg_second_1x.webp) 1x,
+          url(../../img/step_bg_second_2x.webp) 2x
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    // Позиціонування правих карток (Колонка 3)
+    &--third {
+      grid-area: 1 / 3 / 2 / 4;
+      justify-content: flex-start;
+      align-self: end;
+      .step__svg {
+        background: $step-third-bg;
+      }
+      .step__body {
+        align-items: flex-end;
+      }
+
+      &::before {
+        background: linear-gradient(180deg, $step-third-bg, #3b3450);
+      }
+      &::after {
+        // background: radial-gradient(
+        //   ellipse 100% 150% at 130% 110%,
+        //   $step-third-bg 0% 0%,
+        //   #14141a 100% 100%
+        // );
+        background-image: image-set(
+          url(../../img/step_bg_third_1x.webp) 1x,
+          url(../../img/step_bg_third_2x.webp) 2x
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &--forth {
+      grid-area: 2 / 3 / 3 / 4;
+      justify-content: flex-start;
+
+      .step__svg {
+        background: $step-forth-bg;
+      }
+      .step__body {
+        align-items: flex-end;
+      }
+
+      &::before {
+        background: linear-gradient(180deg, $step-forth-bg, #3b3450);
+      }
+      &::after {
+        // background: radial-gradient(
+        //   ellipse 100% 150% at 130% 110%,
+        //   $step-forth-bg 0% 0%,
+        //   #14141a 100% 100%
+        // );
+        background-image: image-set(
+          url(../../img/step_bg_forth_1x.webp) 1x,
+          url(../../img/step_bg_forth_2x.webp) 2x
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  // Стилі для кнопки
+  .add-to-betslip-btn {
+    display: block;
+    background-color: $color-accent-btn;
+    color: $color-dark-bg;
+    padding: 15px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .betslip-odds {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+  &__notify-text {
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-self: center;
+    width: 455px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #181921;
+    &--accent {
+      color: #bfbfcb;
+      font-weight: 400;
+    }
+  }
+}
+
+// --- МОБІЛЬНА ВЕРСІЯ ---
+
+@media (max-width: 1366px) {
+  .feature-showcase {
+    &__content {
+      @include mixin.fluid-prop(column-gap, 10px, 60px, 1024px, 1366px);
+    }
+    &__center-element {
+      & .mockup__image {
+        margin: 0 auto;
+        @include mixin.fluid-prop(width, 220px, 283px, 1024px, 1366px);
+      }
+    }
+    & .step {
+      &__title {
+        @include mixin.fluid-prop(font-size, 14px, 24px, 1024px, 1366px);
+      }
+      &__description {
+        @include mixin.fluid-prop(font-size, 12px, 18px, 1024px, 1366px);
+      }
+      &__number {
+        @include mixin.fluid-prop(font-size, 100px, 140px, 1024px, 1366px);
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .feature-showcase {
+    &__content {
+      column-gap: 0px;
+    }
+    &__center-element {
+      & .mockup__image {
+        @include mixin.fluid-prop(width, 180px, 220px, 800px, 1023px);
+      }
+    }
+    & .step {
+      &__title {
+        @include mixin.fluid-prop(font-size, 16px, 22px, 800px, 1023px);
+      }
+      &__description {
+        @include mixin.fluid-prop(font-size, 14px, 16px, 800px, 1023px);
+      }
+      &__number {
+        @include mixin.fluid-prop(font-size, 90px, 120px, 800px, 1023px);
+      }
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  .feature-showcase {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      @include mixin.fluid-prop(gap, 10px, 30px, 577px, 800px);
+
+      max-width: 400px;
+      background-image: none;
+    }
+
+    &__center-element {
+      order: 5;
+      max-width: 300px;
+      scale: 1;
+      & .mockup__image {
+        width: 100%;
+      }
+    }
+
+    .step {
+      width: 100%;
+      height: 196px;
+      max-height: none;
+
+      &--first,
+      &--second,
+      &--third,
+      &--forth {
+        grid-area: auto;
+        text-align: left;
+        justify-content: flex-start;
+      }
+      &--first {
+        order: 1;
+        &::after {
+          background-image: image-set(
+            url(../../img/step_bg_first_360_1x.webp) 1x,
+            url(../../img/step_bg_first_360_2x.webp) 2x
+          );
+        }
+      }
+      &--second {
+        order: 3;
+        &::after {
+          background-image: image-set(
+            url(../../img/step_bg_second_360_1x.webp) 1x,
+            url(../../img/step_bg_second_360_2x.webp) 2x
+          );
+        }
+      }
+      &--third {
+        order: 2;
+        &::after {
+          background-image: image-set(
+            url(../../img/step_bg_third_360_1x.webp) 1x,
+            url(../../img/step_bg_third_360_2x.webp) 2x
+          );
+        }
+      }
+      &--forth {
+        order: 4;
+        &::after {
+          background-image: image-set(
+            url(../../img/step_bg_forth_360_1x.webp) 1x,
+            url(../../img/step_bg_forth_360_2x.webp) 2x
+          );
+        }
+      }
+      &__wrapper {
+        padding-top: 65px;
+        padding-inline: 16px;
+        align-items: flex-start;
+        gap: 43px;
+      }
+      &__wrapper picture {
+        left: 20px;
+      }
+      .step__body {
+        align-items: flex-start;
+      }
+      &__title {
+        font-size: 18px;
+      }
+      &__description {
+        font-size: 18px;
+      }
+      &__number {
+        padding-bottom: 15px;
+        font-size: 120px;
+        line-height: 0.8;
+      }
+    }
+    &__notify-text {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@use "../utils/mixins" as mixin;
+
+.promo-vip {
+  @include mixin.fluid-prop(margin-top, 0px, 120px, 1367px, 1920px);
+  @include mixin.fluid-prop(margin-bottom, 0px, 120px, 1367px, 1920px);
+  padding-block: 120px;
+  text-align: center;
+  background-image: url(../../img/promo_vip_bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    &--first {
+    }
+    &--second {
+      color: #a9a71e;
+    }
+    &--second-mobile {
+      display: none;
+    }
+    &--third {
+      margin-top: 20px;
+      font-family: "Sofia Sans", sans-serif;
+      color: #bfbfcb;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: none;
+    }
+    &--forth {
+      margin-top: 10px;
+      color: #ffffff;
+      font-family: "Sofia Sans", sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: none;
+    }
+  }
+  &__svg {
+    width: 81px;
+    height: 81px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .promo-vip {
+    background-image: url(../../img/promo_vip_bg_1366.webp);
+  }
+}
+
+@media (max-width: 1024px) {
+  .promo-vip {
+    // @include mixin.fluid-prop(margin-top, 0px, 120px, 577px, 1024px);
+    // @include mixin.fluid-prop(margin-bottom, 0px, 120px, 577px, 1024px);
+    &__subtitle {
+      @include mixin.fluid-prop(font-size, 32px, 40px, 577px, 1024px);
+      @include mixin.fluid-prop(row-gap, 3px, 20px, 360px, 1024px);
+      @include mixin.fluid-prop(column-gap, 15px, 20px, 577px, 1024px);
+      &--third {
+        @include mixin.fluid-prop(font-size, 16px, 18px, 577px, 1024px);
+      }
+      &--forth {
+        @include mixin.fluid-prop(font-size, 16px, 18px, 577px, 1024px);
+      }
+    }
+    &__svg {
+      @include mixin.fluid-prop(width, 44px, 81px, 577px, 1024px);
+      // width: 44px;
+      @include mixin.fluid-prop(height, 44px, 81px, 577px, 1024px);
+      // height: 44px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .promo-vip {
+    padding-block: 70px;
+    background-image: url(../../img/promo_vip_bg_mob.webp);
+    background-size: contain;
+    background-position-y: 10px;
+    &__subtitle {
+      flex-wrap: wrap;
+      // &--second-desktop {
+      //     display: none;
+      // }
+      // &--second-mobile {
+      //     display: block;
+      // }
+    }
+    &__svg {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}

@@ -1,0 +1,228 @@
+@use "../utils/mixins" as mixin;
+
+.appHowWorksCard {
+  flex: 1 1 calc((50% - 24px));
+  @include mixin.fluid-prop(padding, 8px, 24px, 1024px, 1920px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  align-self: stretch;
+  border-radius: 10px;
+  background: #181921;
+  aspect-ratio: 437 / 215;
+  &--last {
+    background-image: image-set(
+      url("/img/appHowWorksCardLastBg_1920_1x.webp") 1x,
+      url("/img/appHowWorksCardLastBg_1920_2x.webp") 2x
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: end;
+    position: relative;
+  }
+
+  &__tip {
+    display: inline-block;
+    @include mixin.fluid-prop(padding-inline, 4px, 10px, 1024px, 1920px);
+    @include mixin.fluid-prop(padding-block, 2px, 4px, 1024px, 1920px);
+    border-radius: 6px;
+    background: #ae6bb5;
+    @include mixin.fluid-prop(font-size, 14px, 24px, 1024px, 1920px);
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    @include mixin.fluid-prop(margin-top, 10px, 40px, 1024px, 1920px);
+    &--last {
+      display: inline-flex;
+    //   padding: 8px 12px 8px 10px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+  }
+
+  &__title {
+    @include mixin.fluid-prop(font-size, 18px, 32px, 1024px, 1920px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  &__text {
+    color: #bfbfcb;
+    @include mixin.fluid-prop(font-size, 12px, 18px, 1024px, 1920px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &--last {
+      padding: 8px 12px 8px 10px;
+      border-radius: 4px;
+      background: #14141a;
+      @include mixin.fluid-prop(width, 210px, 232px, 1367px, 1920px);
+    }
+  }
+  &__tinyImg {
+    @include mixin.fluid-prop(width, 32px, 68px, 1024px, 1920px);
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    @include mixin.fluid-prop(top, 8px, 24px, 1024px, 1920px);
+    @include mixin.fluid-prop(left, 8px, 24px, 1024px, 1920px);
+    // transform: translate(-25%, -25%);
+  }
+}
+
+@media (max-width: 1366px) {
+  .appHowWorksCard {
+    &--last {
+      background-image: image-set(
+        url("/img/appHowWorksCardLastBg_1366_1x.webp") 1x,
+        url("/img/appHowWorksCardLastBg_1366_2x.webp") 2x
+      );
+    }
+    &__text {
+      @include mixin.fluid-prop(font-size, 12px, 18px, 1024px, 1920px);
+      &--last {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .appHowWorksCard {
+    flex: 1 1 calc((50% - 24px));
+    @include mixin.fluid-prop(padding, 8px, 24px, 1024px, 1920px);
+    display: flex;
+    flex-direction: column;
+    //   justify-content: space-between;
+    align-items: start;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #181921;
+    aspect-ratio: 437 / 215;
+    &--last {
+      background-image: image-set(
+        url("/img/appHowWorksCardLastBg_1920_1x.webp") 1x,
+        url("/img/appHowWorksCardLastBg_1920_2x.webp") 2x
+      );
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      justify-content: end;
+      position: relative;
+    }
+
+    &__tip {
+      display: inline-block;
+      @include mixin.fluid-prop(padding-inline, 4px, 10px, 577px, 768px);
+      @include mixin.fluid-prop(padding-block, 2px, 4px, 577px, 768px);
+      border-radius: 6px;
+      background: #ae6bb5;
+      @include mixin.fluid-prop(font-size, 14px, 24px, 577px, 768px);
+    }
+
+    &__descr {
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+      @include mixin.fluid-prop(margin-top, 10px, 40px, 577px, 768px);
+      &--last {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        position: relative;
+      }
+    }
+
+    &__title {
+      @include mixin.fluid-prop(font-size, 18px, 32px, 577px, 768px);
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    &__text {
+      color: #bfbfcb;
+      @include mixin.fluid-prop(font-size, 12px, 18px, 577px, 768px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      &--last {
+        border-radius: 4px;
+        background: #14141a;
+        @include mixin.fluid-prop(width, 210px, 232px, 577px, 768px);
+      }
+    }
+    &__tinyImg {
+      @include mixin.fluid-prop(width, 24px, 68px, 577px, 768px);
+      aspect-ratio: 1 / 1;
+      position: absolute;
+      @include mixin.fluid-prop(top, 8px, 14px, 577px, 768px);
+      @include mixin.fluid-prop(left, 8px, 14px, 577px, 768px);
+      // transform: translate(-25%, -25%);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .appHowWorksCard {
+    flex: 1 1 100%;
+    @include mixin.fluid-prop(padding, 16px, 32px, 360px, 576px);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #181921;
+    aspect-ratio: 437 / 215;
+    &--last {
+      background-image: image-set(
+        url("/img/appHowWorksCardLastBg_576_1x.webp") 1x,
+        url("/img/appHowWorksCardLastBg_576_2x.webp") 2x
+      );
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      justify-content: end;
+      position: relative;
+    }
+
+    &__tip {
+      display: inline-block;
+      @include mixin.fluid-prop(padding-inline, 10px, 16px, 360px, 576px);
+      @include mixin.fluid-prop(padding-block, 4px, 7px, 360px, 576px);
+      border-radius: 6px;
+      background: #ae6bb5;
+      @include mixin.fluid-prop(font-size, 16px, 24px, 360px, 576px);
+    }
+
+    &__descr {
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+      @include mixin.fluid-prop(margin-top, 20px, 40px, 360px, 576px);
+      &--last {
+        @include mixin.fluid-prop(margin-top, 98px, 130px, 360px, 576px);
+      }
+    }
+
+    &__title {
+      @include mixin.fluid-prop(font-size, 24px, 32px, 360px, 576px);
+    }
+    &__text {
+      @include mixin.fluid-prop(font-size, 16px, 26px, 360px, 576px);
+      &--last {
+        @include mixin.fluid-prop(width, 250px, 380px, 360px, 576px);
+      }
+    }
+    &__tinyImg {
+      width: 68px;
+      @include mixin.fluid-prop(top, 16px, 40px, 360px, 576px);
+      @include mixin.fluid-prop(left, 16px, 40px, 360px, 576px);
+    }
+  }
+}

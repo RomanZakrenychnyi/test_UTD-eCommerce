@@ -1,0 +1,74 @@
+@use "../utils/mixins" as mixin;
+
+.how {
+  margin-top: 120px;
+  &__title {
+    font-family: "Sofia Sans Condensed", sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    align-self: stretch;
+  }
+  &__btn {
+    margin: 0 auto;
+    @include mixin.fluid-prop(margin-top, 28px, 50px, 1367px, 1920px);
+  }
+  &__notify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #BFBFCB;
+    &-text {
+      padding: 16px 24px;
+      gap: 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #181921;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .how {
+    @include mixin.fluid-prop(margin-top, 70px, 120px, 577px, 1023px);
+    &__title {
+      @include mixin.fluid-prop(font-size, 32px, 40px, 360px, 1023px);
+      @include mixin.fluid-prop(margin-bottom, 30px, 50px, 577px, 1023px);
+    }
+    &__content {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__btn {
+      @include mixin.fluid-prop(width, 254px, 358px, 577px, 1023px);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .how {
+    &__content {
+      gap: 10px;
+    }
+    &__btn {
+      width: 100%;
+    }
+  }
+}
