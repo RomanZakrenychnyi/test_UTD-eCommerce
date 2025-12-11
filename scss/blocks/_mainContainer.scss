@@ -20,5 +20,3 @@ body {
     @include mixin.fluid-prop(margin-inline, 24px, 64px, 360px, 576px);
   }
 }
-
-// @include mixin.fluid-prop(top, -116px, -140px, 360px, 1920px);
