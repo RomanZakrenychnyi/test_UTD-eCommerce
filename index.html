@@ -21,7 +21,7 @@
           <div class="best-sellers__collections">
             <ul class="collection-list">
               <li class="collection-list__item">
-                <a href="#" class="collection-list__link">
+                <a href="#" class="collection-list__link collection-list__link--active">
                   <span>Mantra Rings</span>
                   <svg
                     class="collection-list__arrow-icon"
@@ -55,7 +55,7 @@
               <li class="collection-list__item">
                 <a
                   href="#"
-                  class="collection-list__link collection-list__link--active"
+                  class="collection-list__link"
                 >
                   <span>CharityBands®</span>
                   <svg
@@ -161,7 +161,7 @@
 
               <div class="product-card__actions">
                 <button
-                  class="product-card__action-btn product-card__action-btn--wishlist"
+                  class="product-card__action-btn product-card__action-btn--wishlist js-wishlist-toggle"
                   aria-label="Add to wishlist"
                 >
                   <!-- <svg class="product-card__action-icon">
@@ -171,8 +171,8 @@
                     <source media="(max-width: 991px)" srcset="/img/flag.svg" />
                     <img
                       src="./img/heart.svg"
-                      alt="Іконка дії"
-                      class="product-card__action-icon"
+                      alt="Add to wishlist"
+                      class="product-card__action-icon js-wishlist-icon"
                     />
                   </picture>
                 </button>
@@ -208,6 +208,21 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="quickview-overlay js-modal-overlay" aria-hidden="true"></div>
+
+    <div class="quickview-modal js-quickview-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="quickview-modal__content">
+            <p class="quickview-modal__text">[PRODUCT NAME] has been added to the your cart.</p>
+            
+            <button class="quickview-modal__close-btn js-modal-close" aria-label="Close popup">
+                <svg class="quickview-modal__close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="#373737" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
     </div>
 
     <script type="module" src="./js/script.js"></script>
